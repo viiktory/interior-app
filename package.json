@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "-": "^0.0.1",
-    "@tailwindcss/postcss": "^4.0.17",
     "@types/node": "^22.13.14",
     "autoprefixer": "^10.4.21",
     "axios": "^1.8.4",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
+    "@tailwindcss/postcss": "^4.0.17",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

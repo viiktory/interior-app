@@ -11,7 +11,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="py-4 font-jost text-base font-normal">
+    <header className="py-4 font-jost text-base font-normal h-[80px] bg-white shadow">
       <div className="max-w-[1200px] mx-auto flex justify-between items-center px-6">
         <Link to="/">
           <img src={Logo} alt="logo" className="h-8" />
