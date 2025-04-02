@@ -7,23 +7,28 @@
 
 html,
 body {
-    font-family: 'Jost', sans-serif;
-    font-size: 22px;
-    line-height: 1.6;
-    color: #292F36;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #292f36;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'DM Serif Display', serif;
-    font-weight: normal;
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: normal;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }

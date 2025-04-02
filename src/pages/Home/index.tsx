@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import bgImage from '@/assets/IMAGE.jpg'
+import bgImage from '@/assets/bg.jpg'
 
 const HomePage: FC = () => {
   return (
