@@ -11,26 +11,20 @@ export default function Header() {
   ]
 
   return (
-    <header className="font-sans text-link font-normal h-[80px] bg-white shadow md:flex-col">
-      <div className="max-w-container mx-auto flex justify-between items-center px-6">
-        <Link to="/">
-          <img src={Logo} alt="logo" className="h-8" />
+    <header className="font-sans text-link h-[80px] bg-white max-w-container w-full mx-auto flex items-center">
+      <div className="w-full flex justify-between items-center px-safe">
+        <Link to="/" className="flex-shrink-0">
+          <img src={Logo} alt="logo" className="h-[50px] max-w-[200px]" />
         </Link>
-
-        <nav aria-label="Main navigation">
-          <ul className="flex gap-8 list-none">
-            {links.map(({ label, to }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  className="text-primary no-underline hover:text-btn-hover transition-colors"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <ul className="flex gap-8">
+          {links.map(({ label, to }) => (
+            <li key={to}>
+              <Link to={to} className="text-primary hover:text-btn-hover transition-colors">
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   )

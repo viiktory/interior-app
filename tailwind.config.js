@@ -8,7 +8,7 @@ export default {
         white: '#ffffff',
         bg: '#ffffff',
         btn: '#292F36',
-        'btn-hover': '#1e1e1e',
+        'btn-hover': '#CDA274',
       },
       fontFamily: {
         sans: ['Jost', 'sans-serif'],
@@ -17,7 +17,7 @@ export default {
       fontSize: {
         base: '22px',
         title: '80px',
-        btn: '18px',
+        link: '18px',
       },
       borderRadius: {
         btn: '18px',
