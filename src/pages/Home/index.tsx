@@ -11,7 +11,7 @@ const HomePage: FC = () => {
         <div className="w-full max-w-[1200px] mx-auto px-[20px]">
           <div className="max-w-[600px] flex flex-col items-start justify-center gap-6">
             <h1 className="text-title font-serif leading-[1.1]">
-              Let's Create Your Dream Interior
+              Let&apos;s Create Your Dream Interior
             </h1>
             <p className="font-sans text-primary">
               The world needs innovators and problem solvers who turn challenges into greater

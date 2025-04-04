@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import viteTsconfigPaths from 'vite-tsconfig-paths'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  plugins: [react(), viteTsconfigPaths()],
+  plugins: [react(), tsconfigPaths()],
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: '@import "./src/index.css";',
+      },
+    },
+  },
 })

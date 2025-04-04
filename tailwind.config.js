@@ -1,7 +1,5 @@
-module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
-  safelist: ['font-sans', 'font-serif', 'text-primary', 'bg-btn', 'hover:bg-btn-hover'],
+export default {
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {

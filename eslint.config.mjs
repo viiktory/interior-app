@@ -1,22 +1,21 @@
-import js from '@eslint/js'
-import globals from 'globals'
+import tsParser from '@typescript-eslint/parser'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
 import prettier from 'eslint-config-prettier'
+import globals from 'globals'
 
-export default tseslint.config(
-  { ignores: ['dist', 'build', 'vite.config.ts'] },
-
+export default [
   {
     name: 'base + ts + react',
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser: tsParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: globals.browser,
+      globals: {
+        AudioWorkletGlobalScope: 'readonly',
+      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -42,9 +41,8 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
-
   {
     name: 'disable formatting rules',
     rules: prettier.rules,
   },
-)
+]

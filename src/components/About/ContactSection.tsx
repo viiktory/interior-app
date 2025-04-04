@@ -16,20 +16,19 @@ const ContactSection: FC = () => {
             the status.
           </p>
         </div>
-          <div className="mb-6">
-            <img src={phoneImage} alt="phone" className="w-10 h-10" />
-              <span className="text-xl text-primary block">012345678</span>
-              <p className="text-lg text-secondary">Call Us Anytime</p>
-          </div>
+        <div className="mb-6">
+          <img src={phoneImage} alt="phone" className="w-10 h-10" />
+          <span className="text-xl text-primary block">012345678</span>
+          <p className="text-lg text-secondary">Call Us Anytime</p>
+        </div>
 
-          <button className="px-6 py-3 bg-primary text-white text-lg font-semibold rounded-md hover:bg-secondary transition-all duration-300">
-            Get Free Estimate →
-          </button>
+        <button className="px-6 py-3 bg-primary text-white text-lg font-semibold rounded-md hover:bg-secondary transition-all duration-300">
+          Get Free Estimate →
+        </button>
 
         <div className="">
           <img src={contactImage} alt="kitchen" className="w-full h-auto rounded-lg object-cover" />
         </div>
-
       </div>
     </section>
   )
