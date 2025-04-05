@@ -39,22 +39,22 @@ const AboutSection: FC = () => {
   if (loading) return <p className="text-center py-10">Loading...</p>
 
   return (
-    <section className="py-12 px-safe">
-      <div className="container max-w-container">
-        <div className="flex flex-wrap justify-center gap-8">
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="w-[30%] min-w-[250px] bg-white p-6 rounded-lg shadow-md flex flex-col"
-            >
-              <h3 className="text-[24px] font-serif text-primary">{item.title || 'No Title'}</h3>
-              <p className="text-secondary text-[18px] font-sans">
-                {item.text || 'No description available'}
-              </p>
-              <button className="text-secondary text-[18px] font-sans">View More →</button>
-            </div>
-          ))}
-        </div>
+    <section className="py-24">
+      <div className="max-w-container text-center flex flex-wrap justify-center items-center gap-8 mx-auto px-safe">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="w-[30%] min-w-[250px] bg-white rounded-lg shadow-md flex flex-col items-center gap-6 p-8"
+          >
+            <h3 className="text-cartTitle text-primary font-serif">{item.title || 'No Title'}</h3>
+            <p className="text-base text-secondary font-sans">
+              {item.text || 'No description available'}
+            </p>
+            <button className="text-link text-secondary font-sans hover:text-btn-hover">
+              View More →
+            </button>
+          </div>
+        ))}
       </div>
     </section>
   )

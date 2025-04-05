@@ -8,8 +8,10 @@ const HomePage: FC = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="max-w-container w-full h-full mx-auto px-safe">
-        <div className="max-w-[600px] w-full flex flex-col gap-4 justify-center items-start h-full ">
-          <h1 className="text-title text-primary font-serif">Let&apos;s Create Your Dream Interior</h1>
+        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full ">
+          <h1 className="text-titleHome text-primary font-serif">
+            Let&apos;s Create Your Dream Interior
+          </h1>
           <p className="text-base text-secondary  font-sans">
             The world needs innovators and problem solvers who turn challenges into greater
             opportunities.

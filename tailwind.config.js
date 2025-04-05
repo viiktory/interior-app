@@ -15,8 +15,10 @@ export default {
         serif: ['DM Serif Display', 'serif'],
       },
       fontSize: {
+        titleHome: '80px',
+        title: '50px',
+        cartTitle: '26px',
         base: '22px',
-        title: '80px',
         link: '18px',
       },
       borderRadius: {
