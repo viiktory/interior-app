@@ -7,6 +7,7 @@ export default {
         secondary: '#4D5053',
         white: '#ffffff',
         bg: '#ffffff',
+        bgBeige: '#F4F0EC',
         btn: '#292F36',
         'btn-hover': '#CDA274',
       },
@@ -32,5 +33,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 }

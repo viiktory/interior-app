@@ -7,9 +7,9 @@ const ContactSection: FC = () => {
     <section className="pb-24">
       <div className="max-w-container flex justify-between items-center mx-auto px-safe">
         <div className="max-w-[600px] flex flex-col gap-6 me-8">
-          <h2 className="text-title text-primary font-serif">
+          <h1 className="text-title text-primary font-serif">
             We Tackle The Most Challenging Designs
-          </h2>
+          </h1>
           <p className="text-base text-secondary font-sans">
             The world needs innovators and problem solvers who turn challenges into greater
             opportunities. We have an insatiable curiosity about transformative trends challenging
