@@ -40,8 +40,8 @@ const Reviews: FC = () => {
   if (loading) return <p className="text-center py-10">Loading...</p>
 
   return (
-    <section className="pb-24 bg-bgBeige rounded-[70px]">
-      <div className="max-w-container mx-auto px-safe text-center">
+    <section className="max-w-container mx-auto pb-24 bg-bgBeige rounded-[70px]">
+      <div className=" px-safe text-center">
         <h1 className="text-title text-primary font-serif py-12">
           What the People Thinks About Interno
         </h1>

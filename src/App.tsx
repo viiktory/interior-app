@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
+import ServicesPage from '@/pages/Services'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <HomePage />
       <AboutPage />
+      <ServicesPage />
     </>
   )
 }
