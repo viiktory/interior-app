@@ -1,4 +1,4 @@
-import {FC} from 'react'
+import { FC } from 'react'
 
 const infoData = [
   { value: '12', label: 'Years Of Experience' },
@@ -7,7 +7,7 @@ const infoData = [
   { value: '4K', label: 'Happy Customers' },
 ]
 
-const InfoServices: FC = () =>{
+const InfoServices: FC = () => {
   return (
     <section className="bg-bgBeige">
       <div className="max-w-container mx-auto px-safe text-center flex justify-center items-center gap-8">

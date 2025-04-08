@@ -6,7 +6,7 @@ const ServicesPage: FC = () => {
   return (
     <>
       <Project />
-      <InfoServices/>
+      <InfoServices />
     </>
   )
 }

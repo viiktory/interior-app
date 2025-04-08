@@ -8,6 +8,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.1",
     "axios": "^1.6.7",
     "firebase": "^11.5.0",
     "postcss": "^8.5.3",
