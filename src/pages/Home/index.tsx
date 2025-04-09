@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import bgImage from '@/assets/bg.jpg'
+import Btn from '@/components/Btn/Btn'
 
 const HomePage: FC = () => {
   return (
@@ -8,17 +9,15 @@ const HomePage: FC = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="max-w-container w-full h-full mx-auto px-safe">
-        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full ">
-          <h1 className="text-titleHome text-primary font-serif">
+        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full pl-6">
+          <h1 className="text-primary font-serif leading-[1.1] capitalize hero-title">
             Let&apos;s Create Your Dream Interior
           </h1>
-          <p className="text-base text-secondary  font-sans">
+          <p className="text-secondary font-sans hero-subtitle">
             The world needs innovators and problem solvers who turn challenges into greater
             opportunities.
           </p>
-          <button className="w-[207px] h-[71px] bg-btn hover:bg-btn-hover text-white font-sans rounded-btn flex items-center justify-center transition-colors">
-            Get Started →
-          </button>
+          <Btn label={'Get Started'} />
         </div>
       </div>
     </section>

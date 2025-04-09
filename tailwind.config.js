@@ -16,7 +16,7 @@ export default {
         serif: ['DM Serif Display', 'serif'],
       },
       fontSize: {
-        titleHome: '80px',
+        titleHome: '75px',
         title: '50px',
         cartTitle: '26px',
         base: '22px',
@@ -26,7 +26,7 @@ export default {
         btn: '18px',
       },
       maxWidth: {
-        container: '1200px',
+        container: '1440px',
       },
       spacing: {
         safe: '20px',
