@@ -1,13 +1,14 @@
 import { FC } from 'react'
 import phoneImage from '@/assets/phone.svg'
 import contactImage from '@/assets/kitchen.jpg'
+import Btn from '@/components/Btn/Btn'
 
 const ContactSection: FC = () => {
   return (
     <section className="pb-24">
       <div className="max-w-container flex justify-between items-center mx-auto px-safe">
-        <div className="max-w-[600px] flex flex-col gap-6 me-8">
-          <h1 className="text-title text-primary font-serif">
+        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full pl-6">
+          <h1 className="text-title text-primary font-serif ">
             We Tackle The Most Challenging Designs
           </h1>
           <p className="text-base text-secondary font-sans">
@@ -22,9 +23,7 @@ const ContactSection: FC = () => {
               <p className="text-base text-secondary font-sans">Call Us Anytime</p>
             </div>
           </div>
-          <button className="w-[207px] h-[71px] bg-btn hover:bg-btn-hover text-white font-sans rounded-btn flex items-center justify-center transition-colors">
-            Get Free Estimate →
-          </button>
+          <Btn label={'Get Free Estimate'} />
         </div>
         <div className="max-w-[600px]">
           <img
