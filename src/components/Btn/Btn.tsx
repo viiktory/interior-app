@@ -9,7 +9,7 @@ const Btn: FC<BtnProps> = ({ label, href = '#_' }) => {
   return (
     <a
       href={href}
-      className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-btn-hover rounded-full shadow-md group"
+      className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-btn-hover rounded-full shadow-md group hover:shadow-xl"
     >
       <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-btn-hover group-hover:translate-x-0 ease">
         <svg

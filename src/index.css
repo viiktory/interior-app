@@ -39,10 +39,17 @@ img {
   @apply lg:text-titleHome md:text-[60px] text-[40px];
 }
 
+.second-title {
+  @apply lg:text-title md:text-[40px] text-[30px];
+}
+
 .hero-subtitle {
   @apply lg:text-base md:text-[20px] text-[18px];
 }
 
 .hero-btn {
   @apply lg:text-base md:text-[20px] text-[18px];
+}
+.cart-h {
+  @apply lg:min-h-[400px] md:min-h-[350px] min-h-[300px];
 }

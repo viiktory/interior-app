@@ -1,15 +1,22 @@
 import { FC } from 'react'
 import bgImage from '@/assets/bg.jpg'
 import Btn from '@/components/Btn/Btn'
+import { motion } from 'framer-motion'
 
 const HomePage: FC = () => {
   return (
     <section
-      className="relative w-full h-screen bg-cover bg-center bg-no-repeat rounded-bl-[300px] overflow-hidden"
+      className="relative w-full h-screen bg-cover bg-center bg-no-repeat rounded-bl-[300px]  overflow-hidden"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="max-w-container w-full h-full mx-auto px-safe">
-        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full pl-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full pl-6"
+        >
           <h1 className="text-primary font-serif leading-[1.1] capitalize hero-title">
             Let&apos;s Create Your Dream Interior
           </h1>
@@ -18,7 +25,7 @@ const HomePage: FC = () => {
             opportunities.
           </p>
           <Btn label={'Get Started'} />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

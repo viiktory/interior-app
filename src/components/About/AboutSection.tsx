@@ -3,12 +3,14 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/firebase/config'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, A11y } from 'swiper/modules'
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+
+import { motion } from 'framer-motion'
 
 interface AboutItem {
   id: string
@@ -48,13 +50,26 @@ const AboutSection: FC = () => {
 
   return (
     <section className="py-24">
-      <div className="max-w-container mx-auto px-safe">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="max-w-container mx-auto px-safe"
+      >
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
           navigation
           pagination={{ clickable: true }}
+          loop={true}
+          speed={800}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           breakpoints={{
             320: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -64,22 +79,22 @@ const AboutSection: FC = () => {
           {items.map((item) => (
             <SwiperSlide key={item.id} className="h-full px-3">
               <div
-                className="min-h-[400px] h-full bg-white rounded-xl p-8 flex flex-col justify-between items-center gap-6 text-center
-                transition-all duration-300 ease-in-out transform
-                hover:scale-[1.03] hover:shadow-xl border-2 border-btn-hover my-8"
+                className="min-h-[400px] h-full bg-white rounded-xl p-8 flex flex-col justify-between items-center gap-6
+            text-center border-2 border-btn-hover my-8
+            transition-all duration-300 ease-in-out transform hover:shadow-xl cart-h"
               >
-                <div className="flex-1 flex flex-col justify-center gap-6">
+                <div className="flex-1 flex flex-col justify-center items-center gap-6">
                   <h3 className="text-cartTitle text-primary font-serif">{item.title}</h3>
                   <p className="text-base text-secondary font-sans">{item.text}</p>
                 </div>
-                <button className="text-link text-secondary font-sans hover:text-btn-hover">
+                <button className="text-link text-secondary font-sans p-2 my-2 rounded-full border-2 border-transparent hover:text-btn-hover hover:border-2 hover:border-btn-hover hover:shadow-md">
                   View More ➞
                 </button>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   )
 }
