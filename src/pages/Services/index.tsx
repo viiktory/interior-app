@@ -1,11 +1,11 @@
 import { FC } from 'react'
-import Project from '@/components/Services/Project'
+import Projects from '@/components/Services/Projects.tsx'
 import InfoServices from '@/components/Services/InfoServices'
 
 const ServicesPage: FC = () => {
   return (
     <>
-      <Project />
+      <Projects />
       <InfoServices />
     </>
   )

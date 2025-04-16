@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 const infoData = [
   { value: '12', label: 'Years Of Experience' },
-  { value: '5K', label: 'Success Project' },
-  { value: '1K', label: 'Active Project' },
+  { value: '5K', label: 'Success Projects' },
+  { value: '1K', label: 'Active Projects' },
   { value: '4K', label: 'Happy Customers' },
 ]
 

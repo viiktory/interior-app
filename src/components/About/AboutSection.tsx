@@ -80,7 +80,7 @@ const AboutSection: FC = () => {
             <SwiperSlide key={item.id} className="h-full px-3">
               <div
                 className="min-h-[400px] h-full bg-white rounded-xl p-8 flex flex-col justify-between items-center gap-6
-            text-center border-2 border-btn-hover my-8
+            text-center border-2 border-btn-hover my-8 hover:bg-card-hover
             transition-all duration-300 ease-in-out transform hover:shadow-xl cart-h"
               >
                 <div className="flex-1 flex flex-col justify-center items-center gap-6">

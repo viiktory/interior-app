@@ -7,9 +7,9 @@ export default {
         secondary: '#4D5053',
         white: '#ffffff',
         bg: '#ffffff',
-        bgBeige: '#E2D3C4',
         btn: '#292F36',
-        'btn-hover': '#A5927C',
+        'btn-hover': '#B8B1A9',
+        'card-hover': '#f1f1f1',
       },
       fontFamily: {
         sans: ['Jost', 'sans-serif'],

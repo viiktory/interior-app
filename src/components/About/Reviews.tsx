@@ -83,12 +83,12 @@ const Reviews: FC = () => {
           {items.map((item) => (
             <SwiperSlide key={item.id} className="h-full px-3">
               <div
-                className="min-h-[350px] h-full bg-white  rounded-xl p-8 flex flex-col justify-center items-center gap-6
-              text-center transition-all duration-300 ease-in-out transform hover:shadow-xl cart-h"
+                className="min-h-[350px] h-full bg-white rounded-xl p-8 flex flex-col justify-center items-center gap-4
+                text-center transition-all duration-300 ease-in-out transform hover:bg-card-hover hover:shadow-lg hover:scale-[1.02]"
               >
                 <h3 className="text-cartTitle text-primary font-serif">{item.name}</h3>
                 <span className="text-link text-secondary font-sans">{item.city}</span>
-                <p className="text-base text-secondary font-sans">{item.review}</p>
+                <p className="text-base text-secondary font-sans max-w-[280px]">{item.review}</p>
               </div>
             </SwiperSlide>
           ))}

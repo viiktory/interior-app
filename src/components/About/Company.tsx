@@ -4,17 +4,40 @@ import Company2 from '@/assets/company2.svg'
 import Company3 from '@/assets/company3.svg'
 import Company4 from '@/assets/company4.svg'
 import Company5 from '@/assets/company5.svg'
+import { motion } from 'framer-motion'
+
+interface CompanyLogo {
+  src: string
+  alt: string
+}
+
+const companyLogos: CompanyLogo[] = [
+  { src: Company1, alt: 'Company 1' },
+  { src: Company2, alt: 'Company 2' },
+  { src: Company3, alt: 'Company 3' },
+  { src: Company4, alt: 'Company 4' },
+  { src: Company5, alt: 'Company 5' },
+]
 
 const Company: FC = () => {
   return (
     <section className="py-24">
-      <div className="max-w-container h-[103px] flex justify-between items-center mx-auto px-safe">
-        <img src={Company1} alt="Company1" />
-        <img src={Company2} alt="Company2" />
-        <img src={Company3} alt="Company3" />
-        <img src={Company4} alt="Company4" />
-        <img src={Company5} alt="Company5" />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="max-w-container mx-auto px-safe flex flex-wrap justify-center gap-y-8 gap-x-10"
+      >
+        {companyLogos.map((logo, index) => (
+          <img
+            key={index}
+            src={logo.src}
+            alt={logo.alt}
+            className="h-10 md:h-[70px] lg:h-[90px] transition-transform duration-300 hover:scale-105 hover:opacity-90"
+          />
+        ))}
+      </motion.div>
     </section>
   )
 }
