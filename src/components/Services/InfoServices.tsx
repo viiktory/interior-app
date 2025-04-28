@@ -10,11 +10,11 @@ const infoData = [
 const InfoServices: FC = () => {
   return (
     <section className="bg-bgBeige">
-      <div className="max-w-container mx-auto px-safe text-center flex justify-center items-center gap-8">
+      <div className="mx-auto flex max-w-container items-center justify-center gap-8 px-safe text-center">
         {infoData.map((item, index) => (
           <div key={index} className="py-24">
-            <h3 className="text-titleHome text-btn-hover font-serif">{item.value}</h3>
-            <p className="text-base text-secondary font-sans">{item.label}</p>
+            <h3 className="font-serif text-titleHome text-btn-hover">{item.value}</h3>
+            <p className="font-sans text-base text-secondary">{item.label}</p>
           </div>
         ))}
       </div>

@@ -36,20 +36,23 @@ img {
 }
 
 .hero-title {
-  @apply lg:text-titleHome md:text-[60px] text-[40px];
+  @apply text-[40px] md:text-[60px] lg:text-titleHome;
 }
 
 .second-title {
-  @apply lg:text-title md:text-[40px] text-[30px];
+  @apply text-[30px] md:text-[40px] lg:text-title;
 }
 
 .hero-subtitle {
-  @apply lg:text-base md:text-[20px] text-[18px];
+  @apply text-[18px] md:text-[20px] lg:text-base;
 }
 
 .hero-btn {
-  @apply lg:text-base md:text-[20px] text-[18px];
+  @apply text-[18px] md:text-[20px] lg:text-base;
 }
 .cart-h {
-  @apply lg:min-h-[400px] md:min-h-[350px] min-h-[300px];
+  @apply min-h-[300px] md:min-h-[350px] lg:min-h-[400px];
+}
+.button {
+  @apply w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600;
 }

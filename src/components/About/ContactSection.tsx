@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import phoneImage from '@/assets/phone.svg'
-import contactImage from '@/assets/kitchen.jpg'
-import Btn from '@/components/Btn/Btn'
+import phoneImage from '../../assets/phone.svg'
+import contactImage from '../../assets/kitchen.jpg'
+import Btn from '../../components/Btn/Btn'
 import { motion } from 'framer-motion'
 
 const ContactSection: FC = () => {
@@ -16,13 +16,13 @@ const ContactSection: FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 max-w-container flex flex-col-reverse md:flex-row justify-center items-center mx-auto px-safe gap-12 min-h-[600px] md:min-h-0"
+        className="relative z-10 mx-auto flex min-h-[600px] max-w-container flex-col-reverse items-center justify-center gap-12 px-safe md:min-h-0 md:flex-row"
       >
-        <div className="max-w-[600px] w-full flex flex-col gap-6 justify-center items-start h-full px-6  bg-white/80 md:bg-transparent py-10 md:py-0">
-          <h1 className="text-title text-primary font-serif leading-[1.1] capitalize second-title">
+        <div className="flex h-full w-full max-w-[600px] flex-col items-start justify-center gap-6 bg-white/80 px-6 py-10 md:bg-transparent md:py-0">
+          <h1 className="second-title font-serif text-title capitalize leading-[1.1] text-primary">
             We Tackle The Most Challenging Designs
           </h1>
-          <p className="text-base text-secondary font-sans hero-subtitle">
+          <p className="hero-subtitle font-sans text-base text-secondary">
             The world needs innovators and problem solvers who turn challenges into greater
             opportunities. We have an insatiable curiosity about transformative trends challenging
             the status.
@@ -33,23 +33,23 @@ const ContactSection: FC = () => {
             </a>
             <div>
               <a
-                className="text-base text-secondary font-sans block"
+                className="block font-sans text-base text-secondary"
                 href="tel:+1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 +1 (234) 567-890
               </a>
-              <p className="text-base text-secondary font-sans">Call Us Anytime</p>
+              <p className="font-sans text-base text-secondary">Call Us Anytime</p>
             </div>
           </div>
           <Btn label={'Get Free Estimate'} />
         </div>
-        <div className="max-w-[600px] w-full hidden md:block">
+        <div className="hidden w-full max-w-[600px] md:block">
           <img
             src={contactImage}
             alt="kitchen"
-            className="w-full h-auto rounded-tr-[326px] rounded-bl-[123px] object-cover"
+            className="h-auto w-full rounded-bl-[123px] rounded-tr-[326px] object-cover"
           />
         </div>
       </motion.div>

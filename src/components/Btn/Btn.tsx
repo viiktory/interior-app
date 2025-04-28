@@ -9,11 +9,11 @@ const Btn: FC<BtnProps> = ({ label, href = '#_' }) => {
   return (
     <a
       href={href}
-      className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-btn-hover rounded-full shadow-md group hover:shadow-xl"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-btn-hover p-4 px-6 py-3 font-medium text-indigo-600 shadow-md transition duration-300 ease-out hover:shadow-xl"
     >
-      <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-btn-hover group-hover:translate-x-0 ease">
+      <span className="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-btn-hover text-white duration-300 group-hover:translate-x-0">
         <svg
-          className="w-6 h-6"
+          className="h-6 w-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -27,11 +27,12 @@ const Btn: FC<BtnProps> = ({ label, href = '#_' }) => {
           />{' '}
         </svg>
       </span>
-      <span className="absolute flex items-center justify-center w-full h-full text-secondary transition-all duration-300 transform group-hover:translate-x-full ease">
+      <span className="ease absolute flex h-full w-full transform items-center justify-center text-secondary transition-all duration-300 group-hover:translate-x-full">
         {label}
       </span>
-      <span className="relative invisible"> {label}</span>
+      <span className="invisible relative"> {label}</span>
     </a>
   )
 }
+
 export default Btn

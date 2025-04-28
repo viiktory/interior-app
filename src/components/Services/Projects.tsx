@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from '@/firebase/config'
-import BtnItem from '@/assets/btn.svg'
+import { db } from '../../firebase/config'
+import BtnItem from '../../assets/btn.svg'
 
 interface ProjectItem {
   id: string
@@ -20,6 +20,7 @@ const Projects: FC = () => {
         const querySnapshot = await getDocs(collection(db, 'projects'))
         const data = querySnapshot.docs.map((doc) => {
           const docData = doc.data()
+
           return {
             id: doc.id,
             image: docData.image,
@@ -27,6 +28,7 @@ const Projects: FC = () => {
             text: docData.text,
           } as ProjectItem
         })
+
         setItems(data)
       } catch (error) {
         console.error('Error fetching about data:', error)
@@ -38,28 +40,28 @@ const Projects: FC = () => {
     fetchData()
   }, [])
 
-  if (loading) return <p className="text-center py-10">Loading...</p>
+  if (loading) return <p className="py-10 text-center">Loading...</p>
 
   return (
-    <section className="pb-24 ">
-      <div className="max-w-container mx-auto px-safe text-center">
-        <h1 className="text-title text-primary font-serif mb-4">Recent Projects</h1>
-        <p className="text-base text-secondary font-sans max-w-[800px] mx-auto mb-12">
+    <section className="pb-24">
+      <div className="mx-auto max-w-container px-safe text-center">
+        <h1 className="mb-4 font-serif text-title text-primary">Recent Projects</h1>
+        <p className="mx-auto mb-12 max-w-[800px] font-sans text-base text-secondary">
           With tools to make every part of your process more human and a support team excited to
           help you, getting started with us never been easier.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+        <div className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-2">
           {items.map((item) => (
-            <div key={item.id} className="w-full max-w-[500px] bg-white rounded-xl p-6 text-left">
+            <div key={item.id} className="w-full max-w-[500px] rounded-xl bg-white p-6 text-left">
               <img
-                className="w-full h-[500px] rounded-tr-[80px] mb-4"
+                className="mb-4 h-[500px] w-full rounded-tr-[80px]"
                 src={item.image}
                 alt={item.title}
               />
               <div className="flex items-center gap-6">
                 <div>
-                  <h3 className="text-cartTitle text-primary font-serif">{item.title}</h3>
-                  <p className="text-base text-secondary font-sans">{item.text}</p>
+                  <h3 className="font-serif text-cartTitle text-primary">{item.title}</h3>
+                  <p className="font-sans text-base text-secondary">{item.text}</p>
                 </div>
                 <img src={BtnItem} alt="btn" />
               </div>
@@ -70,4 +72,5 @@ const Projects: FC = () => {
     </section>
   )
 }
+
 export default Projects

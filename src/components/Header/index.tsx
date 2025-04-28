@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
-import Logo from '@/assets/logo.svg'
+import Logo from '../../assets/logo.svg'
 
 type NavLink = {
   label: string
@@ -23,17 +23,18 @@ export default function Header() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
+
     return () => {
       document.body.style.overflow = ''
     }
   }, [isOpen])
 
   return (
-    <header className="font-sans text-link h-[80px] bg-white max-w-container w-full mx-auto flex items-center">
-      <div className="w-full flex justify-between items-center px-safe">
+    <header className="mx-auto flex h-[80px] w-full max-w-container items-center bg-white font-sans text-link">
+      <div className="flex w-full items-center justify-between px-safe">
         <Link
           to="/"
-          className={`flex-shrink-0 transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : ''}`}
+          className={`flex-shrink-0 transition-opacity duration-300 ${isOpen ? 'pointer-events-none opacity-0' : ''}`}
         >
           <img src={Logo} alt="Company Logo" className="h-[50px] max-w-[200px]" />
         </Link>
@@ -44,7 +45,7 @@ export default function Header() {
               <li key={to}>
                 <Link
                   to={to}
-                  className="text-primary hover:text-btn-hover transition-colors duration-300 ease-in-out"
+                  className="text-primary transition-colors duration-300 ease-in-out hover:text-btn-hover"
                 >
                   {label}
                 </Link>
@@ -54,7 +55,7 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden text-3xl text-primary z-[60] transition-transform duration-200 ease-in-out"
+          className="z-[60] text-3xl text-primary transition-transform duration-200 ease-in-out md:hidden"
           onClick={toggleMenu}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
@@ -63,14 +64,14 @@ export default function Header() {
       </div>
 
       <nav
-        className={`md:hidden fixed top-0 left-0 w-full h-dvh bg-white z-50 overflow-y-auto transition-all duration-500 ease-in-out transform ${
+        className={`fixed left-0 top-0 z-50 h-dvh w-full transform overflow-y-auto bg-white transition-all duration-500 ease-in-out md:hidden ${
           isOpen
             ? 'animate-slide-down opacity-100'
-            : 'animate-slide-up opacity-0 pointer-events-none'
+            : 'pointer-events-none animate-slide-up opacity-0'
         }`}
       >
-        <div className="h-full w-full px-4 py-8 flex flex-col items-center">
-          <ul className="flex flex-col gap-6 text-link w-full max-w-[400px] text-center">
+        <div className="flex h-full w-full flex-col items-center px-4 py-8">
+          <ul className="flex w-full max-w-[400px] flex-col gap-6 text-center text-link">
             {links.map(({ label, to }, index) => (
               <li
                 key={to}
@@ -78,7 +79,7 @@ export default function Header() {
               >
                 <Link
                   to={to}
-                  className="text-primary hover:text-btn-hover transition-colors duration-300"
+                  className="text-primary transition-colors duration-300 hover:text-btn-hover"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}

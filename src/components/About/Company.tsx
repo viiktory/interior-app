@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import Company1 from '@/assets/company1.svg'
-import Company2 from '@/assets/company2.svg'
-import Company3 from '@/assets/company3.svg'
-import Company4 from '@/assets/company4.svg'
-import Company5 from '@/assets/company5.svg'
+import Company1 from '../../assets/company1.svg'
+import Company2 from '../../assets/company2.svg'
+import Company3 from '../../assets/company3.svg'
+import Company4 from '../../assets/company4.svg'
+import Company5 from '../../assets/company5.svg'
 import { motion } from 'framer-motion'
 
 interface CompanyLogo {
@@ -27,14 +27,14 @@ const Company: FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-container mx-auto px-safe flex flex-wrap justify-center gap-y-8 gap-x-10"
+        className="mx-auto flex max-w-container flex-wrap justify-center gap-x-10 gap-y-8 px-safe"
       >
         {companyLogos.map((logo, index) => (
           <img
             key={index}
             src={logo.src}
             alt={logo.alt}
-            className="h-10 md:h-[70px] lg:h-[90px] transition-transform duration-300 hover:scale-105 hover:opacity-90"
+            className="h-10 transition-transform duration-300 hover:scale-105 hover:opacity-90 md:h-[70px] lg:h-[90px]"
           />
         ))}
       </motion.div>

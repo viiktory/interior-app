@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from '@/firebase/config'
+import { db } from '../../firebase/config'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules'
@@ -28,6 +28,7 @@ const AboutSection: FC = () => {
         const querySnapshot = await getDocs(collection(db, 'about'))
         const data = querySnapshot.docs.map((doc) => {
           const docData = doc.data()
+
           return {
             id: doc.id,
             title: docData.title?.trim() || 'No Title',
@@ -46,7 +47,7 @@ const AboutSection: FC = () => {
     fetchData()
   }, [])
 
-  if (loading) return <p className="text-center py-10">Loading...</p>
+  if (loading) return <p className="py-10 text-center">Loading...</p>
 
   return (
     <section className="py-24">
@@ -55,7 +56,7 @@ const AboutSection: FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-container mx-auto px-safe"
+        className="mx-auto max-w-container px-safe"
       >
         <Swiper
           modules={[Navigation, Pagination, A11y, Autoplay]}
@@ -78,16 +79,12 @@ const AboutSection: FC = () => {
         >
           {items.map((item) => (
             <SwiperSlide key={item.id} className="h-full px-3">
-              <div
-                className="min-h-[400px] h-full bg-white rounded-xl p-8 flex flex-col justify-between items-center gap-6
-            text-center border-2 border-btn-hover my-8 hover:bg-card-hover
-            transition-all duration-300 ease-in-out transform hover:shadow-xl cart-h"
-              >
-                <div className="flex-1 flex flex-col justify-center items-center gap-6">
-                  <h3 className="text-cartTitle text-primary font-serif">{item.title}</h3>
-                  <p className="text-base text-secondary font-sans">{item.text}</p>
+              <div className="cart-h my-8 flex h-full min-h-[400px] transform flex-col items-center justify-between gap-6 rounded-xl border-2 border-btn-hover bg-white p-8 text-center transition-all duration-300 ease-in-out hover:bg-card-hover hover:shadow-xl">
+                <div className="flex flex-1 flex-col items-center justify-center gap-6">
+                  <h3 className="font-serif text-cartTitle text-primary">{item.title}</h3>
+                  <p className="font-sans text-base text-secondary">{item.text}</p>
                 </div>
-                <button className="text-link text-secondary font-sans p-2 my-2 rounded-full border-2 border-transparent hover:text-btn-hover hover:border-2 hover:border-btn-hover hover:shadow-md">
+                <button className="my-2 rounded-full border-2 border-transparent p-2 font-sans text-link text-secondary hover:border-2 hover:border-btn-hover hover:text-btn-hover hover:shadow-md">
                   View More ➞
                 </button>
               </div>

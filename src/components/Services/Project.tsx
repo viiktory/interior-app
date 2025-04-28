@@ -11,10 +11,10 @@ const Project: FC = () => {
   return (
     <section>
       <div>
+        <button>← Back</button>
         <img src="" alt="" />
         <h3>Title</h3>
         <p>Text</p>
-        <button>Btn</button>
       </div>
     </section>
   )
