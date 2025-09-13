@@ -3,13 +3,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        background: '#f0f0f0',
         primary: '#292F36',
-        secondary: '#4D5053',
-        white: '#ffffff',
-        bg: '#ffffff',
-        btn: '#292F36',
-        'btn-hover': '#B8B1A9',
-        'card-hover': '#f1f1f1',
+        secondary: '#CDA274',
+        description: '#4D5053',
       },
       fontFamily: {
         sans: ['Jost', 'sans-serif'],
@@ -22,8 +19,8 @@ module.exports = {
         base: '22px',
         link: '18px',
       },
-      borderRadius: {
-        btn: '18px',
+      height: {
+        header: '100px',
       },
       maxWidth: {
         container: '1440px',
