@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         background: '#f0f0f0',
+        cardBg: '#FFFFFF',
         primary: '#292F36',
         secondary: '#CDA274',
         description: '#4D5053',

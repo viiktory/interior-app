@@ -6,8 +6,12 @@ export { default as Header } from './Header/Header'
 
 export { default as Footer } from './Footer/Footer'
 
-export { default as ItemLink } from './ItemLink/ItemLink'
+export { default as ItemLink } from './Item/ItemLink'
+
+export { default as ItemCard } from './Item/ItemCard.tsx'
 
 export { default as FadeIn } from './Animations/FadeIn'
 
+export { default as Field } from './Field/Field'
 
+export { default as Intro } from './About/Intro'
