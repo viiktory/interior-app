@@ -23,7 +23,7 @@ const Intro = () => {
   }, [])
 
   return (
-    <section className="mx-auto flex max-w-container gap-4 px-safe lg:my-24 my-16">
+    <section className="container my-16 gap-4 lg:my-24">
       <Swiper
         modules={[Navigation]}
         slidesPerView={3}

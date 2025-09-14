@@ -15,3 +15,6 @@ export { default as FadeIn } from './Animations/FadeIn'
 export { default as Field } from './Field/Field'
 
 export { default as Intro } from './About/Intro'
+
+export { default as FeaturesIntro } from './About/FeaturesIntro'
+

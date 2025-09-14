@@ -9,7 +9,7 @@ const Home = () => {
         className="relative h-screen w-full overflow-hidden rounded-none bg-cover bg-center bg-no-repeat lg:rounded-bl-[300px]"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <div className="mx-auto flex h-full w-[600px] max-w-container flex-col justify-center gap-4 px-safe">
+        <div className="container h-full w-[600px] flex-col justify-center gap-4">
           <FadeIn className="inline-block">
             <h1 className="hero-title-h1 leading-[1.3]">Let&apos;s Create Your Dream Interior</h1>
           </FadeIn>
