@@ -2,7 +2,7 @@ export const PATHS = {
   HOME: '/',
   ABOUT: '#about',
   SERVICE: {
-    service: '#servers',
+    service: '#services',
     details: '/services/:id',
   },
   PAGES: {

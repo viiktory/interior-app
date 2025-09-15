@@ -8,7 +8,9 @@ export { default as Footer } from './Footer/Footer'
 
 export { default as ItemLink } from './Item/ItemLink'
 
-export { default as ItemCard } from './Item/ItemCard.tsx'
+export { default as ItemCard } from './Item/ItemCard'
+
+export { default as PostCard } from './Item/PostCard'
 
 export { default as FadeIn } from './Animations/FadeIn'
 
@@ -22,5 +24,4 @@ export { default as Reviews } from './About/Reviews'
 
 export { default as CompanyLogo } from './About/CompanyLogo'
 
-
-
+export { default as InfoProjects } from './Services/InfoProjects'

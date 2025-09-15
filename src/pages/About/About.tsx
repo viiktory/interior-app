@@ -2,7 +2,7 @@ import { Intro, FeaturesIntro, Reviews, CompanyLogo } from '@/components'
 
 const About = () => {
   return (
-    <section id="#abot">
+    <section id="about">
       <Intro />
       <FeaturesIntro />
       <Reviews/>

@@ -1,6 +1,6 @@
 import bgImage from '../../assets/images/bg.jpg'
 import { Button, FadeIn } from '../../components'
-import { About } from '@/pages'
+import { About, Services } from '@/pages'
 
 const Home = () => {
   return (
@@ -27,6 +27,7 @@ const Home = () => {
         </div>
       </section>
       <About />
+      <Services/>
     </>
   )
 }
