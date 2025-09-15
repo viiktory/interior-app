@@ -25,3 +25,5 @@ export { default as Reviews } from './About/Reviews'
 export { default as CompanyLogo } from './About/CompanyLogo'
 
 export { default as InfoProjects } from './Services/InfoProjects'
+
+export { default as FeaturesServices } from './Services/FeaturesServices'
