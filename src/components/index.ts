@@ -20,3 +20,7 @@ export { default as FeaturesIntro } from './About/FeaturesIntro'
 
 export { default as Reviews } from './About/Reviews'
 
+export { default as CompanyLogo } from './About/CompanyLogo'
+
+
+

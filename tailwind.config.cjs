@@ -4,10 +4,10 @@ module.exports = {
     extend: {
       colors: {
         sectionBg: '#e4dbd0',
-        background: '#F5F7F8',
+        background: '#f8f6f5',
         cardBg: '#FFFFFF',
         primary: '#2C3E50',
-        secondary: '#D4A373',
+        secondary: '#ae8464',
         description: '#5F6366',
       },
       fontFamily: {

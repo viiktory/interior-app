@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { getReviews, ReviewsProps } from '@/api/getReviews.ts'
@@ -23,14 +23,12 @@ const Reviews = () => {
   }, [])
 
   return (
-    <section className=" mb-16  lg:mx-4 mx-0 lg:rounded-[70px] rounded-none bg-sectionBg lg:mb-24 lg:py-16 py-12 ">
+    <section className=" mb-16  lg:mx-12 mx-0 lg:rounded-[70px] rounded-none bg-sectionBg lg:mb-24 lg:py-16 py-12 ">
       <div className="container flex-col gap-6">
       <Field title="What the People Thinks About Interno" />
       <div>
         <Swiper
-          modules={[Autoplay, Pagination]}
-          loop={true}
-          autoplay={{delay: 3000, disableOnInteraction: false}}
+          modules={[ Pagination]}
           slidesPerView={3}
           spaceBetween={20}
           pagination={{ clickable: true }}
