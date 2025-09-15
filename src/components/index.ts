@@ -18,3 +18,5 @@ export { default as Intro } from './About/Intro'
 
 export { default as FeaturesIntro } from './About/FeaturesIntro'
 
+export { default as Reviews } from './About/Reviews'
+

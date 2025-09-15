@@ -37,7 +37,7 @@ const Intro = () => {
       >
         {data.map(({ id, title, text }) => (
           <SwiperSlide key={id}>
-            <ItemCard title={title} description={text} button="View More" />
+            <ItemCard title={title} description={text} button="View More" className="bg-background" />
           </SwiperSlide>
         ))}
       </Swiper>

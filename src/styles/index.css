@@ -25,7 +25,7 @@
 }
 
 .card {
-    @apply flex flex-col bg-background rounded-[30px] py-[40px] px-[20px] justify-between lg:min-h-[300px] min-h-[250px]
+    @apply flex flex-col rounded-[30px] py-[40px] px-[20px] justify-between lg:min-h-[300px] min-h-[250px]
 }
 
 /*.hero-btn {*/

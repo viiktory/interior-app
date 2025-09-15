@@ -3,11 +3,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#f0f0f0',
+        sectionBg: '#e4dbd0',
+        background: '#F5F7F8',
         cardBg: '#FFFFFF',
-        primary: '#292F36',
-        secondary: '#CDA274',
-        description: '#4D5053',
+        primary: '#2C3E50',
+        secondary: '#D4A373',
+        description: '#5F6366',
       },
       fontFamily: {
         sans: ['Jost', 'sans-serif'],

@@ -1,98 +1,59 @@
-import { FC, useEffect, useState } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase/config'
-
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules'
-
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+import { getReviews, ReviewsProps } from '@/api/getReviews.ts'
+import { ItemCard, Field } from '../../components'
 
-import { motion } from 'framer-motion'
-
-interface ReviewsItem {
-  id: string
-  name: string
-  city: string
-  review: string
-}
-
-const Reviews: FC = () => {
-  const [items, setItems] = useState<ReviewsItem[]>([])
-  const [loading, setLoading] = useState(true)
+const Reviews = () => {
+  const [items, setItems] = useState<ReviewsProps[]>([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'reviews'))
-        const data = querySnapshot.docs.map((doc) => {
-          const docData = doc.data()
-
-          return {
-            id: doc.id,
-            name: docData.name,
-            city: docData.city,
-            review: docData.review,
-          } as ReviewsItem
-        })
-
-        setItems(data)
+        const reviewData = await getReviews()
+        setItems(reviewData)
       } catch (error) {
         console.error('Error fetching about data:', error)
-      } finally {
-        setLoading(false)
       }
     }
 
     fetchData()
   }, [])
 
-  if (loading) return <p className="py-10 text-center">Loading...</p>
-
   return (
-    <section className="mx-auto max-w-container rounded-[70px] bg-btn-hover pb-24">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="mx-auto max-w-container px-safe"
-      >
-        <h1 className="second-title py-12 text-center font-serif text-title capitalize leading-[1.1] text-primary">
-          What the People Thinks About Interno
-        </h1>
+    <section className=" mb-16  lg:mx-4 mx-0 lg:rounded-[70px] rounded-none bg-sectionBg lg:mb-24 lg:py-16 py-12 ">
+      <div className="container flex-col gap-6">
+      <Field title="What the People Thinks About Interno" />
+      <div>
         <Swiper
-          modules={[Navigation, Pagination, A11y, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
+          modules={[Autoplay, Pagination]}
           loop={true}
-          speed={800}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          autoplay={{delay: 3000, disableOnInteraction: false}}
+          slidesPerView={3}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
           breakpoints={{
-            320: { slidesPerView: 1 },
+            0: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
         >
-          {items.map((item) => (
-            <SwiperSlide key={item.id} className="h-full px-3">
-              <div className="flex h-full min-h-[350px] transform flex-col items-center justify-center gap-4 rounded-xl bg-white p-8 text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-card-hover hover:shadow-lg">
-                <h3 className="font-serif text-cartTitle text-primary">{item.name}</h3>
-                <span className="font-sans text-link text-secondary">{item.city}</span>
-                <p className="max-w-[280px] font-sans text-base text-secondary">{item.review}</p>
-              </div>
+          {items.map(({ id, image, name, city, review }) => (
+            <SwiperSlide key={id} >
+              <ItemCard
+                image={image}
+                title={name}
+                location={city}
+                description={review}
+                className="bg-cardBg  lg:h-[350px] h-[300px]"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
-      </motion.div>
+      </div>
+      </div>
     </section>
   )
 }
