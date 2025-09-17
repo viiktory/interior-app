@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getProjects, InfoProjectProps } from '@/api//getProjects'
+import { getProjects, InfoProjectProps } from '@/api/getProjects'
 import { Field, PostCard } from '@/components'
 
 const InfoProjects = () => {

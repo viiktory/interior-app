@@ -23,6 +23,7 @@ module.exports = {
       },
       height: {
         header: '100px',
+        footer: '250px',
       },
       maxWidth: {
         container: '1440px',

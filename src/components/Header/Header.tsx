@@ -1,8 +1,8 @@
-import LogoIcon from '../../assets/images/logo.svg?react'
-import { ItemLink } from '../../components'
-import { PATHS } from '@/paths'
 import { useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
+import LogoIcon from '../../assets/images/logo.svg?react'
+import { PATHS } from '@/paths'
+import { ItemLink } from '../../components'
 
 const navLinks = [
   { to: PATHS.HOME, label: 'Home' },
@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return (
-    <section className="bg-background h-header">
+    <section className="h-header bg-background">
       <header className="mx-auto flex h-full w-full max-w-container items-center justify-between gap-8 px-safe font-sans text-link">
         <ItemLink to={PATHS.HOME}>
           <LogoIcon className="h-8 w-auto" />
@@ -36,7 +36,7 @@ const Header = () => {
         </button>
 
         <nav
-          className={`${isOpen ? 'flex' : 'hidden'} bg-background fixed inset-0 z-40 md:static md:block md:w-auto`}
+          className={`${isOpen ? 'flex' : 'hidden'} fixed inset-0 z-40 bg-background md:static md:block md:w-auto`}
         >
           <ul className="flex h-full w-full flex-col items-center justify-center gap-8 md:h-auto md:flex-row md:p-0">
             {navLinks.map(({ to, label }) => (

@@ -1,7 +1,7 @@
 type PostCardProps = {
   image?: string
   title: string
-  description: string
+  description?: string
   dataPost?: string
   button?: string
   onClick?: () => void

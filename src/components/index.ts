@@ -12,6 +12,10 @@ export { default as ItemCard } from './Item/ItemCard'
 
 export { default as PostCard } from './Item/PostCard'
 
+export { default as NavItemExternal } from './Item/NavItemExternal'
+
+export { default as AccordionItem } from './Item/AccordionItem/AccordionItem'
+
 export { default as FadeIn } from './Animations/FadeIn'
 
 export { default as Field } from './Field/Field'
@@ -27,3 +31,5 @@ export { default as CompanyLogo } from './About/CompanyLogo'
 export { default as InfoProjects } from './Services/InfoProjects'
 
 export { default as FeaturesServices } from './Services/FeaturesServices'
+
+export { default as BlogsCards } from './Blogs/BlogsCards'
