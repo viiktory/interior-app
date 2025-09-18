@@ -1,13 +1,4 @@
-import { FC } from 'react'
-
-interface Project {
-  id: string
-  image: string
-  title: string
-  text: string
-}
-
-const Project: FC = () => {
+const ProjectDetails = () => {
   return (
     <section>
       <div>
@@ -20,4 +11,4 @@ const Project: FC = () => {
   )
 }
 
-export default Project
+export default ProjectDetails

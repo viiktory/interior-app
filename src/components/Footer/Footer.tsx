@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-background">
       <div className="container flex-col py-8">
-        <div className="grid lg:gap-10 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div className="flex flex-col justify-between gap-4">
             <ItemLink to={PATHS.HOME}>
               <LogoIcon className="h-10 w-auto" />

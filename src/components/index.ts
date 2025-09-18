@@ -33,3 +33,5 @@ export { default as InfoProjects } from './Services/InfoProjects'
 export { default as FeaturesServices } from './Services/FeaturesServices'
 
 export { default as BlogsCards } from './Blogs/BlogsCards'
+
+export { default as SubscribeNews } from './Blogs/Subscribe.tsx'

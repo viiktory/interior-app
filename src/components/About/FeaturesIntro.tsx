@@ -4,7 +4,7 @@ import { Field, Button, ItemLink } from '../../components'
 
 const FeaturesIntro = () => {
   return (
-    <section className="mb-16 bg-background lg:mb-24 px-safe">
+    <section className="mb-16 bg-background px-safe lg:mb-24">
       <div className="container flex flex-col justify-between gap-8 px-4 py-12 md:flex-row lg:px-0">
         <div className="flex-1 self-center">
           <Field
@@ -16,7 +16,7 @@ const FeaturesIntro = () => {
 
           <ItemLink
             to="tel:+380123456789"
-            className="lg:mt-12 mt-6 flex items-center gap-4 font-sans text-base text-description"
+            className="mt-6 flex items-center gap-4 font-sans text-base text-description lg:mt-12"
           >
             <PhoneIcon alt="Phone" className="w-30 h-30" />
             <div className="flex flex-col gap-2">
@@ -28,11 +28,11 @@ const FeaturesIntro = () => {
           <Button text="Get Free Estimate" className="button mt-12" />
         </div>
 
-        <div className="mt-8 flex-1 lg:mt-0 self-center">
+        <div className="mt-8 flex-1 self-center lg:mt-0">
           <img
             src={KitchenImage}
             alt="kitchen"
-            className="lg:rounded-bl-[123px] lg:rounded-tr-[326px] rounded-[20px] object-cover"
+            className="rounded-[20px] object-cover lg:rounded-bl-[123px] lg:rounded-tr-[326px]"
           />
         </div>
       </div>

@@ -12,7 +12,7 @@ const AccordionItem = ({ title, children, isOpen, onToggle }: AccordionItemProps
   return (
     <div className="w-100%">
       <button className="flex items-center justify-between" type="button" onClick={onToggle}>
-        <span className="hero-title-h3 lg:pb-6 pb-0">{title}</span>
+        <span className="hero-title-h3 pb-0 lg:pb-6">{title}</span>
         <FaChevronDown
           className={`transition-transform duration-300 md:hidden ${isOpen ? 'rotate-180' : ''}`}
         />

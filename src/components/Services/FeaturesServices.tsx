@@ -7,11 +7,13 @@ const infoData = [
 
 const FeaturesServices = () => {
   return (
-    <section className="bg-sectionBg mb-24">
-      <div className="container lg:flex-row flex-col items-center justify-between py-8 gap-4 text-center">
+    <section className="mb-24 bg-sectionBg">
+      <div className="container flex-col items-center justify-between gap-4 py-8 text-center lg:flex-row">
         {infoData.map((item, index) => (
-          <div key={index} className=" lg:py-24 py-0 leading-[1.4]">
-            <h3 className="text-secondary font-serif text-[35px] md:text-[60px] lg:text-titleHome">{item.value}</h3>
+          <div key={index} className="py-0 leading-[1.4] lg:py-24">
+            <h3 className="font-serif text-[35px] text-secondary md:text-[60px] lg:text-titleHome">
+              {item.value}
+            </h3>
             <p className="hero-subtitle-p">{item.label}</p>
           </div>
         ))}

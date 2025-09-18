@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <section id="services">
       <InfoProjects />
-      <FeaturesServices/>
+      <FeaturesServices />
     </section>
   )
 }

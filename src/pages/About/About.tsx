@@ -5,8 +5,8 @@ const About = () => {
     <section id="about">
       <Intro />
       <FeaturesIntro />
-      <Reviews/>
-      <CompanyLogo/>
+      <Reviews />
+      <CompanyLogo />
     </section>
   )
 }
