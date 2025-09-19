@@ -7,7 +7,7 @@ const infoData = [
 
 const FeaturesServices = () => {
   return (
-    <section className="mb-24 bg-sectionBg">
+    <section className="bg-sectionBg">
       <div className="container flex-col items-center justify-between gap-4 py-8 text-center lg:flex-row">
         {infoData.map((item, index) => (
           <div key={index} className="py-0 leading-[1.4] lg:py-24">

@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         sectionBg: '#e4dbd0',
-        background: '#f8f6f5',
+        background: '#f0efec',
         cardBg: '#FFFFFF',
         primary: '#2C3E50',
         secondary: '#ae8464',

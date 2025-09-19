@@ -6,8 +6,8 @@ export const PATHS = {
     details: '/services/:id',
   },
   PAGES: {
-    page: '#pages',
-    details: 'pages/:id',
+    page: '#blogs',
+    details: 'blogs/:id',
   },
   CONTACT: '#contact',
 }

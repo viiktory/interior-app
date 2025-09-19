@@ -20,9 +20,9 @@ const Header = () => {
   }
 
   return (
-    <section className="h-header bg-background">
-      <header className="mx-auto flex h-full w-full max-w-container items-center justify-between gap-8 px-safe font-sans text-link">
-        <ItemLink to={PATHS.HOME}>
+    <section className="absolute left-0 top-0 h-header w-full">
+      <header className="mx-auto flex h-full max-w-container items-center justify-between gap-8 px-safe font-sans text-link">
+        <ItemLink to={PATHS.HOME} className="relative z-50">
           <LogoIcon className="h-8 w-auto" />
         </ItemLink>
 
@@ -36,7 +36,7 @@ const Header = () => {
         </button>
 
         <nav
-          className={`${isOpen ? 'flex' : 'hidden'} fixed inset-0 z-40 bg-background md:static md:block md:w-auto`}
+          className={`${isOpen ? 'flex' : 'hidden'} fixed inset-0 z-40 bg-cardBg p-6 md:static md:block md:w-auto md:rounded-2xl md:bg-cardBg/30 md:shadow-xl md:backdrop-blur-lg`}
         >
           <ul className="flex h-full w-full flex-col items-center justify-center gap-8 md:h-auto md:flex-row md:p-0">
             {navLinks.map(({ to, label }) => (

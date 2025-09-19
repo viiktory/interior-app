@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { getReviews, ReviewsProps } from '@/api/getReviews.ts'
@@ -26,12 +26,12 @@ const Reviews = () => {
     <section className="mx-0 mb-16 rounded-none bg-sectionBg py-12 lg:mx-12 lg:mb-24 lg:rounded-[70px] lg:py-16">
       <div className="container flex-col gap-6">
         <Field title="What the People Thinks About Interno" />
-        <div>
+        <div >
           <Swiper
-            modules={[Pagination]}
+            modules={[Navigation]}
             slidesPerView={3}
             spaceBetween={20}
-            pagination={{ clickable: true }}
+            navigation
             breakpoints={{
               0: { slidesPerView: 1 },
               768: { slidesPerView: 2 },

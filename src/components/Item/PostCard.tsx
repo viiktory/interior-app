@@ -18,7 +18,7 @@ const PostCard = ({
   className,
 }: PostCardProps) => {
   return (
-    <div className={`flex flex-col gap-4 ${className ?? ''}`}>
+    <div className={`flex flex-col gap-4 bg-cardBg p-6 rounded-2xl  ${className ?? ''}`}>
       {image && <img src={image} alt={title} className="h-60 w-full rounded-t-lg object-cover" />}
 
       <div className="flex flex-col gap-2">
