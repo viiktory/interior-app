@@ -1,6 +1,7 @@
 import KitchenImage from '../../assets/images/kitchen.jpg'
 import PhoneIcon from '../../assets/icons/phone.svg?react'
-import { Field, Button, ItemLink } from '../../components'
+import { Field, ItemLink } from '../../components'
+import { PATHS } from '@/paths.ts'
 
 const FeaturesIntro = () => {
   return (
@@ -25,7 +26,7 @@ const FeaturesIntro = () => {
             </div>
           </ItemLink>
 
-          <Button text="Get Free Estimate" className="button mt-6 lg:mt-12" />
+          <ItemLink to={PATHS.SOON} label="Get Free Estimate" className="button mt-6 lg:mt-12" />
         </div>
 
         <div className="mt-8 flex-1 self-center lg:mt-0">

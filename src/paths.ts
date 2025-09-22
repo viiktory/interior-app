@@ -10,4 +10,6 @@ export const PATHS = {
     details: 'blogs/:id',
   },
   CONTACT: '#contact',
+  SOON: '/soon',
+  ERROR: '/404',
 }

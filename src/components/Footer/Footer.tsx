@@ -31,15 +31,15 @@ const Footer = () => {
           </div>
 
           <AccordionItem title="Pages" isOpen={openIndex === 0} onToggle={() => handleToggle(0)}>
-            <ItemLink to={PATHS.HOME} label="Style Guide" />
-            <ItemLink to={PATHS.HOME} label="Protected" />
-            <ItemLink to={PATHS.HOME} label="404" />
+            <ItemLink to={PATHS.SOON} label="Style Guide" />
+            <ItemLink to={PATHS.SOON} label="Protected" />
+            <ItemLink to={PATHS.ERROR} label="404" />
           </AccordionItem>
 
           <AccordionItem title="Explore" isOpen={openIndex === 1} onToggle={() => handleToggle(1)}>
             <ItemLink to={PATHS.ABOUT} label="About Us" />
             <ItemLink to={PATHS.PAGES.page} label="Recent Blog" />
-            <ItemLink to={PATHS.HOME} label="Our Projects" />
+            <ItemLink to={PATHS.SOON} label="Our Projects" />
           </AccordionItem>
           <AccordionItem title="Contact" isOpen={openIndex === 2} onToggle={() => handleToggle(2)}>
             <NavItemExternal
