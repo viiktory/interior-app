@@ -30,7 +30,7 @@ const BlogsCards = () => {
   }
 
   return (
-    <section className="mb-16 bg-background pt-4 lg:mb-24 pb-8">
+    <section className="lg:mb-22 mb-16 bg-background pb-8 pt-4">
       <div className="container flex-col">
         <Field
           title="Recent Blogs"
@@ -39,8 +39,7 @@ const BlogsCards = () => {
         />
         <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-3">
           {currentPosts.map(({ id, image, title, text }) => (
-            <PostCard key={id} image={image} title={title} dataPost={text}
-                      button="Read more" />
+            <PostCard key={id} image={image} title={title} dataPost={text} button="Read more" />
           ))}
         </div>
         <div className="mt-8 flex items-center justify-center gap-4">

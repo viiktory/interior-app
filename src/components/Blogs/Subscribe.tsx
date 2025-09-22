@@ -22,7 +22,7 @@ const Subscribe = () => {
   }
 
   return (
-    <section className="container my-16 rounded-none bg-sectionBg py-12 lg:rounded-[70px] lg:py-16">
+    <section className="lg:my-22 container my-12 rounded-none bg-sectionBg py-12 lg:rounded-[70px] lg:py-16">
       <Formik
         initialValues={{ phone: '' }}
         validationSchema={validationSchema}
@@ -33,9 +33,10 @@ const Subscribe = () => {
             <Field
               title="Wanna join the interno?"
               description="Leave your phone number, we will definitely contact you"
+              className="text-center"
             />
 
-            <div className="mx-auto flex w-full max-w-[700px] flex-col justify-center gap-4 sm:flex-row sm:gap-8">
+            <div className="mx-auto flex w-full max-w-[700px] flex-col justify-center gap-4 pt-6 sm:flex-row sm:gap-8">
               <FormikField
                 name="phone"
                 type="tel"

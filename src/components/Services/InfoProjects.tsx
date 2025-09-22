@@ -24,24 +24,24 @@ const InfoProjects = () => {
   }
 
   return (
-    <section className=" bg-background mt-16 pt-4 lg:mt-24">
-      <div className="container flex-col gap-8">
-      <Field
-        title="Recent Projects"
-        description="With tools to make every part of your process more human and a support team excited to help you, getting started with us never been easier "
-        className="text-center"
-      />
+    <section className="mt-16 bg-background pt-4 lg:mt-24">
+      <div className="container flex-col gap-2 lg:gap-6">
+        <Field
+          title="Recent Projects"
+          description="With tools to make every part of your process more human and a support team excited to help you, getting started with us never been easier "
+          className="text-center"
+        />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 py-8">
-        {projects.slice(0, visible).map(({ id, image, title, text }) => (
-          <PostCard key={id} image={image} title={title} description={text} button="Read more" />
-        ))}
-      </div>
-      {visible < projects.length && (
-        <div className="text-center pb-12">
-          <Button text="Show more" className="button" onClick={handleMore} />
+        <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2 lg:gap-6">
+          {projects.slice(0, visible).map(({ id, image, title, text }) => (
+            <PostCard key={id} image={image} title={title} description={text} button="Read more" />
+          ))}
         </div>
-      )}
+        {visible < projects.length && (
+          <div className="pb-12 text-center">
+            <Button text="Show more" className="button" onClick={handleMore} />
+          </div>
+        )}
       </div>
     </section>
   )

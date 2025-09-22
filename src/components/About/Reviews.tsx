@@ -26,7 +26,7 @@ const Reviews = () => {
     <section className="mx-0 mb-16 rounded-none bg-sectionBg py-12 lg:mx-12 lg:mb-24 lg:rounded-[70px] lg:py-16">
       <div className="container flex-col gap-6">
         <Field title="What the People Thinks About Interno" />
-        <div >
+        <div>
           <Swiper
             modules={[Navigation]}
             slidesPerView={3}

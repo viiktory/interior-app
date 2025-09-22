@@ -20,19 +20,16 @@ const ItemCard = ({
   return (
     <div className={`card ${className ?? ''}`}>
       <div className="flex flex-col items-center gap-4 text-center">
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            className="h-24 w-24 rounded-full border-2 border-secondary object-cover"
-          />
-        )}
+        {image && <img src={image} alt={title} className="h-24 w-24 rounded-full object-cover" />}
         <h3 className="hero-title-h3">{title}</h3>
         {location && <span>{location}</span>}
         <p className="hero-subtitle-p">{description}</p>
       </div>
       {button && (
-        <button className="text-[16px] px-2 py-2 text-secondary lg:text-[18px] hover:text-description" onClick={onClick}>
+        <button
+          className="px-2 py-2 text-[16px] text-secondary hover:text-description lg:text-[18px]"
+          onClick={onClick}
+        >
           {button}
         </button>
       )}
