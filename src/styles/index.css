@@ -5,85 +5,121 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    @keyframes gradient-x {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .animate-gradient-x {
+        background-size: 200% 200%;
+        animation: gradient-x 5s ease infinite;
+    }
+}
+
 .swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #5f6366;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #5f6366;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ae8464;
+    background-color: #ae8464;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  background: #ae8464;
-  color: #f8f6f5;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    z-index: 20;
 
-  &:hover {
-    color: #2c3e50;
-    transform: scale(1.05);
-  }
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #ae8464;
+    color: #f0efec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  &::after {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 
-  &.swiper-button-disabled {
-    opacity: 0;
-    pointer-events: none;
-  }
+    &:hover {
+        color: #ae8464;
+        background-color: #5F6366;
+        transform: scale(1.05);
+    }
+
+    &::after {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .container {
-  @apply mx-auto flex max-w-container px-safe;
+    @apply mx-auto flex max-w-container px-safe;
 }
 
 .hero-title-h1 {
-  @apply font-serif text-[35px] capitalize leading-[1.35] text-primary md:text-[60px] lg:text-titleHome;
+    @apply font-serif text-[35px] capitalize leading-[1.35] text-primary md:text-[60px] lg:text-titleHome;
 }
 
 .hero-title-h2 {
-  @apply font-serif text-[30px] capitalize leading-[1.35] text-primary md:text-[40px] lg:text-title;
+    @apply font-serif text-[30px] capitalize leading-[1.35] text-primary md:text-[40px] lg:text-title;
 }
 
 .hero-title-h3 {
-  @apply font-serif text-base leading-[1.3] text-primary lg:text-cartTitle;
+    @apply font-serif text-base leading-[1.3] text-primary lg:text-cartTitle;
 }
 
 .hero-subtitle-p {
-  @apply font-sans text-[18px] leading-[1.4] text-description md:text-[20px] lg:text-base;
+    @apply font-sans text-[18px] leading-[1.4] text-description md:text-[20px] lg:text-base;
 }
 
 .card {
-  @apply flex min-h-[250px] flex-col justify-between rounded-[30px] px-[20px] py-[40px] lg:min-h-[300px];
+    @apply flex flex-col justify-between rounded-[30px] p-5 lg:p-10
+    min-h-[250px] lg:min-h-[300px] shadow-lg;
+    @apply w-full max-w-[100%];
 }
 
-.button {
-  @apply inline-flex h-full w-auto min-w-[150px] items-center justify-center rounded-[20px] bg-primary px-2 py-3 text-[16px] text-background hover:bg-secondary hover:text-primary md:py-4 lg:h-[50px] lg:text-[18px];
+@layer components {
+    .button {
+        @apply inline-flex h-full w-auto min-w-[150px] items-center justify-center
+        rounded-[20px] px-2 py-3 md:py-4 lg:h-[50px] lg:text-[18px] text-[16px]
+        text-background bg-gradient-to-r from-primary via-secondary to-description
+        animate-gradient-x hover:scale-105 hover:shadow-lg
+        transition-all duration-300;
+    }
+}
+
+.button-secondary {
+    @apply px-2 py-2 text-[16px] text-description font-serif hover:text-secondary lg:text-[18px] relative after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100
 }
 
 .small-description {
-  @apply text-link text-description lg:text-base;
+    @apply text-link text-description lg:text-base;
+}
+
+.line {
+    @apply relative transition-all duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:scale-105 hover:text-secondary hover:after:origin-left hover:after:scale-x-100;
 }

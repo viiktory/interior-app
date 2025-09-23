@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { getIntro, IntroItem } from '@/api/getIntro.ts'
-import { ItemCard } from '../../components'
+import { ItemCard, FadeIn } from '../../components'
 
 const Intro = () => {
   const [data, setData] = useState<IntroItem[]>([])
@@ -24,7 +24,8 @@ const Intro = () => {
   }, [])
 
   return (
-    <section className="lg:my-22 container my-12 gap-4 pt-4">
+    <FadeIn viewport={{ once: true, amount: 0.4 }}>
+    <section className="lg:mb-22 container mb-12 gap-4 pt-4 mt-8">
       {data.length > 0 && (
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -52,6 +53,7 @@ const Intro = () => {
         </Swiper>
       )}
     </section>
+    </FadeIn>
   )
 }
 

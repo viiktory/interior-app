@@ -1,3 +1,6 @@
+import { PATHS } from '@/paths.ts'
+import { ItemLink } from '@/components'
+
 type PostCardProps = {
   image?: string
   title: string
@@ -19,7 +22,13 @@ const PostCard = ({
 }: PostCardProps) => {
   return (
     <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 ${className ?? ''}`}>
-      {image && <img src={image} alt={title} className="h-60 w-full rounded-t-lg object-cover" />}
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          className="h-60 w-full rounded-t-lg object-cover transition-transform duration-300 hover:scale-105"
+        />
+      )}
 
       <div className="flex flex-col gap-2">
         <h3 className="hero-title-h3">{title}</h3>
@@ -31,12 +40,7 @@ const PostCard = ({
 
       {button && (
         <div className="mt-auto flex justify-end">
-          <button
-            className="text-[16px] font-medium text-primary hover:text-secondary"
-            onClick={onClick}
-          >
-            {button}
-          </button>
+          <ItemLink to={PATHS.SOON} label={button} onClick={onClick} className="button-secondary" />
         </div>
       )}
     </div>

@@ -1,11 +1,12 @@
 import KitchenImage from '../../assets/images/kitchen.jpg'
 import PhoneIcon from '../../assets/icons/phone.svg?react'
-import { Field, ItemLink } from '../../components'
+import { Field, ItemLink,FadeIn } from '../../components'
 import { PATHS } from '@/paths.ts'
 
 const FeaturesIntro = () => {
   return (
     <section className="mb-16 bg-background px-safe lg:mb-24">
+      <FadeIn viewport={{ once: true, amount: 0.3 }}>
       <div className="container flex flex-col justify-between gap-4 px-4 py-8 md:flex-row lg:gap-8 lg:px-0 lg:py-12">
         <div className="flex-1 self-center">
           <Field
@@ -33,10 +34,11 @@ const FeaturesIntro = () => {
           <img
             src={KitchenImage}
             alt="kitchen"
-            className="rounded-[20px] object-cover lg:rounded-bl-[123px] lg:rounded-tr-[326px]"
+            className="rounded-[20px] object-cover lg:rounded-bl-[123px] lg:rounded-tr-[326px] transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>
+      </FadeIn>
     </section>
   )
 }

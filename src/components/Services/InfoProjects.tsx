@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getProjects, InfoProjectProps } from '@/api/getProjects'
-import { Field, PostCard, Button } from '@/components'
+import { Field, PostCard, Button, FadeIn } from '@/components'
 
 const InfoProjects = () => {
   const [projects, setProjects] = useState<InfoProjectProps[]>([])
@@ -25,24 +25,32 @@ const InfoProjects = () => {
 
   return (
     <section className="mt-16 bg-background pt-4 lg:mt-24">
-      <div className="container flex-col gap-2 lg:gap-6">
-        <Field
-          title="Recent Projects"
-          description="With tools to make every part of your process more human and a support team excited to help you, getting started with us never been easier "
-          className="text-center"
-        />
+      <FadeIn viewport={{ once: true, amount: 0.3 }}>
+        <div className="container flex-col gap-2 lg:gap-6">
+          <Field
+            title="Recent Projects"
+            description="With tools to make every part of your process more human and a support team excited to help you, getting started with us never been easier "
+            className="text-center"
+          />
 
-        <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2 lg:gap-6">
-          {projects.slice(0, visible).map(({ id, image, title, text }) => (
-            <PostCard key={id} image={image} title={title} description={text} button="Read more" />
-          ))}
-        </div>
-        {visible < projects.length && (
-          <div className="pb-12 text-center">
-            <Button text="Show more" className="button" onClick={handleMore} />
+          <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2 lg:gap-6">
+            {projects.slice(0, visible).map(({ id, image, title, text }) => (
+              <PostCard
+                key={id}
+                image={image}
+                title={title}
+                description={text}
+                button="Read more"
+              />
+            ))}
           </div>
-        )}
-      </div>
+          {visible < projects.length && (
+            <div className="pb-12 text-center">
+              <Button text="Show more" className="button" onClick={handleMore} />
+            </div>
+          )}
+        </div>
+      </FadeIn>
     </section>
   )
 }

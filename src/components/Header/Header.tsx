@@ -36,12 +36,16 @@ const Header = () => {
         </button>
 
         <nav
-          className={`${isOpen ? 'flex' : 'hidden'} fixed inset-0 z-40 bg-cardBg p-6 md:static md:block md:w-auto md:rounded-2xl md:bg-cardBg/30 md:shadow-xl md:backdrop-blur-lg`}
+          className={`${isOpen ? 'flex' : 'hidden'} fixed inset-0 z-40 bg-cardBg p-6 md:static md:block md:w-auto md:rounded-[20px] md:bg-sectionBg/10 md:shadow-xl md:backdrop-blur-lg`}
         >
           <ul className="flex h-full w-full flex-col items-center justify-center gap-8 md:h-auto md:flex-row md:p-0">
             {navLinks.map(({ to, label }) => (
               <li key={label}>
-                <ItemLink to={to} onClick={handleOpen} className="hover:text-secondary">
+                <ItemLink
+                  to={to}
+                  onClick={handleOpen}
+                  className="line"
+                >
                   {label}
                 </ItemLink>
               </li>

@@ -1,3 +1,6 @@
+import { PATHS } from '@/paths.ts'
+import { ItemLink } from '@/components'
+
 type ItemCardProps = {
   image?: string
   title: string
@@ -20,18 +23,24 @@ const ItemCard = ({
   return (
     <div className={`card ${className ?? ''}`}>
       <div className="flex flex-col items-center gap-4 text-center">
-        {image && <img src={image} alt={title} className="h-24 w-24 rounded-full object-cover" />}
+        {image && (
+          <img
+            src={image}
+            alt={title}
+            className="md:h-24 md:w-24  h-20 w-20 rounded-full border-2 border-solid border-secondary object-cover transition-transform duration-300 hover:scale-105"
+          />
+        )}
         <h3 className="hero-title-h3">{title}</h3>
         {location && <span>{location}</span>}
         <p className="hero-subtitle-p">{description}</p>
       </div>
       {button && (
-        <button
-          className="px-2 py-2 text-[16px] text-secondary hover:text-description lg:text-[18px]"
+        <ItemLink
+          to={PATHS.SOON}
+          label={button}
+          className="button-secondary text-shadow-md text-center"
           onClick={onClick}
-        >
-          {button}
-        </button>
+        />
       )}
     </div>
   )

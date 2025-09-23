@@ -14,9 +14,7 @@
     "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
-    "antd": "^5.24.6",
     "autoprefixer": "^10.4.21",
-    "axios": "^1.8.4",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-react": "^7.37.4",
     "firebase": "^11.5.0",
@@ -34,8 +32,7 @@
     "tailwind-scrollbar-hide": "^2.0.0",
     "tailwindcss": "^3.4.17",
     "yup": "^1.7.0",
-    "zod": "^3.24.3",
-    "zustand": "^5.0.3"
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",

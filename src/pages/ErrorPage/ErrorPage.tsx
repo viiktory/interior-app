@@ -4,7 +4,7 @@ import { ItemLink } from '@/components'
 
 const ErrorPage = () => {
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center bg-white px-4 text-center">
+    <section className="flex min-h-screen flex-col items-center justify-center bg-cardBg px-4 text-center">
       <img
         src={ErrorImage}
         alt="Error"
@@ -16,7 +16,7 @@ const ErrorPage = () => {
       <ItemLink
         to={PATHS.HOME}
         label="Go back to home"
-        className="rounded-lg bg-secondary px-6 py-3 text-sm text-white transition hover:bg-opacity-90 sm:text-base lg:text-lg"
+        className="button"
       />
     </section>
   )
