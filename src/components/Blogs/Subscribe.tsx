@@ -22,7 +22,7 @@ const Subscribe = () => {
   }
 
   return (
-    <section className="lg:my-22 container my-12 rounded-none bg-sectionBg py-12 lg:rounded-[70px] lg:py-16">
+    <section className="container my-0 rounded-none bg-sectionBg py-12 md:my-12 lg:rounded-[70px] lg:py-16">
       <Formik
         initialValues={{ phone: '' }}
         validationSchema={validationSchema}
@@ -36,26 +36,24 @@ const Subscribe = () => {
               className="text-center"
             />
 
-            <div className="mx-auto flex w-full max-w-[700px] flex-col justify-center gap-4 pt-6 sm:flex-row sm:gap-8">
-              <FormikField
-                name="phone"
-                type="tel"
-                placeholder="Your phone"
-                className="w-full rounded-[20px] border px-4 py-2 sm:flex-1"
-              />
-              <Button
-                type="submit"
-                text="Send"
-                disabled={isSubmitting}
-                className="w-full sm:w-[150px]"
-              />
-            </div>
+            <div className="mx-auto flex w-full max-w-[700px] flex-col gap-2">
+              <div className="flex flex-col justify-center gap-4 pt-6 sm:flex-row sm:gap-8">
+                <FormikField
+                  name="phone"
+                  type="tel"
+                  placeholder="Your phone"
+                  className="w-full rounded-[20px] border-2 border-solid border-secondary px-4 py-2 sm:flex-1"
+                />
+                <Button
+                  type="submit"
+                  text="Send"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-[150px]"
+                />
+              </div>
 
-            <ErrorMessage
-              name="phone"
-              component="p"
-              className="text-center text-[14px] text-red-500"
-            />
+              <ErrorMessage name="phone" component="p" className="pl-4 text-[14px] text-red-500" />
+            </div>
           </Form>
         )}
       </Formik>

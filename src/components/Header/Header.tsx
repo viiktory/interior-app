@@ -9,7 +9,7 @@ const navLinks = [
   { to: PATHS.ABOUT, label: 'About' },
   { to: PATHS.SERVICE.service, label: 'Services' },
   { to: PATHS.PAGES.page, label: 'Pages' },
-  { to: PATHS.CONTACT, label: 'Contact Us' },
+  { to: PATHS.FOOTER, label: 'Contact Us' },
 ]
 
 const Header = () => {

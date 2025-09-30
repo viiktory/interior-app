@@ -22,6 +22,7 @@
 }
 
 .swiper-pagination {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -43,12 +44,9 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    position: absolute;
     top: 50%;
     z-index: 20;
 
-    width: 2.5rem;
-    height: 2.5rem;
     border-radius: 50%;
     background-color: #ae8464;
     color: #f0efec;
@@ -56,17 +54,19 @@
     align-items: center;
     justify-content: center;
 
+    border: transparent;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 
     &:hover {
         color: #ae8464;
-        background-color: #5F6366;
+        background-color: #f0efec;
+        border: solid 2px #ae8464;
         transform: scale(1.05);
     }
 
     &::after {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: bold;
     }
 

@@ -12,7 +12,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-background">
+    <footer id="footer" className="bg-background">
       <div className="container flex-col py-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div className="flex flex-col justify-between gap-4">
@@ -76,7 +76,7 @@ const Footer = () => {
               className="transition-all duration-300 hover:text-secondary"
             />
             <ItemLink
-              to={PATHS.SOON}
+              to={PATHS.SERVICE.service}
               label="Our Projects"
               className="transition-all duration-300 hover:text-secondary"
             />
