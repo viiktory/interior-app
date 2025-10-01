@@ -41,11 +41,7 @@ const Header = () => {
           <ul className="flex h-full w-full flex-col items-center justify-center gap-8 md:h-auto md:flex-row md:p-0">
             {navLinks.map(({ to, label }) => (
               <li key={label}>
-                <ItemLink
-                  to={to}
-                  onClick={handleOpen}
-                  className="line"
-                >
+                <ItemLink to={to} onClick={handleOpen} className="line">
                   {label}
                 </ItemLink>
               </li>

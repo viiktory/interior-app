@@ -13,11 +13,7 @@ const ErrorPage = () => {
       <h2 className="mb-6 text-xl font-semibold text-gray-800 sm:text-2xl lg:text-3xl">
         Oops, looks like you&apos;re stranded in the middle of nowhere
       </h2>
-      <ItemLink
-        to={PATHS.HOME}
-        label="Go back to home"
-        className="button"
-      />
+      <ItemLink to={PATHS.HOME} label="Go back to home" className="button" />
     </section>
   )
 }

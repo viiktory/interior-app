@@ -23,6 +23,7 @@ input,
 button,
 textarea {
   font-family: inherit;
+  outline: none;
 }
 
 li {

@@ -30,7 +30,7 @@ const BlogsCards = () => {
   }
 
   return (
-    <section className=" bg-background pb-8 pt-4">
+    <section className="bg-background pb-8 pt-4">
       <FadeIn viewport={{ once: true, amount: 0.4 }}>
         <div className="container flex-col">
           <Field
@@ -47,7 +47,7 @@ const BlogsCards = () => {
             <button
               onClick={() => handlePageChange('prev')}
               disabled={currentPage === 1}
-              className="rounded-full bg-secondary p-2 text-white disabled:opacity-50"
+              className="rounded-full bg-secondary p-2 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50"
             >
               <FiChevronLeft size={20} />
             </button>
@@ -59,7 +59,7 @@ const BlogsCards = () => {
             <button
               onClick={() => handlePageChange('next')}
               disabled={currentPage === totalPages}
-              className="rounded-full bg-secondary p-2 text-white disabled:opacity-50"
+              className="rounded-full bg-secondary p-2 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50"
             >
               <FiChevronRight size={20} />
             </button>

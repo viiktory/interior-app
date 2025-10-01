@@ -25,34 +25,34 @@ const Intro = () => {
 
   return (
     <FadeIn viewport={{ once: true, amount: 0.4 }}>
-    <section className="lg:mb-22 container mb-12 gap-4 pt-4 mt-8">
-      {data.length > 0 && (
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          loop={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          spaceBetween={20}
-          slidesPerView={3}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {data.map(({ id, title, text }) => (
-            <SwiperSlide key={id}>
-              <ItemCard
-                title={title}
-                description={text}
-                button="View More"
-                className="bg-sectionBg"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
-    </section>
+      <section className="lg:mb-22 container mb-12 mt-8 gap-4 pt-4">
+        {data.length > 0 && (
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            spaceBetween={20}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {data.map(({ id, title, text }) => (
+              <SwiperSlide key={id}>
+                <ItemCard
+                  title={title}
+                  description={text}
+                  button="View More"
+                  className="bg-sectionBg"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </section>
     </FadeIn>
   )
 }

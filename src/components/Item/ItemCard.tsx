@@ -27,7 +27,7 @@ const ItemCard = ({
           <img
             src={image}
             alt={title}
-            className="md:h-24 md:w-24  h-20 w-20 rounded-full border-2 border-solid border-secondary object-cover transition-transform duration-300 hover:scale-105"
+            className="h-20 w-20 rounded-full border-2 border-solid border-secondary object-cover transition-transform duration-300 hover:scale-105 md:h-24 md:w-24"
           />
         )}
         <h3 className="hero-title-h3">{title}</h3>

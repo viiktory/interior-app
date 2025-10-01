@@ -3,21 +3,21 @@ import { useEffect } from 'react'
 import { Footer, Header } from '../../components'
 
 const Layout = () => {
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
 
   return (
-  <>
-    <Header />
-    <main>
-      <Outlet />
-    </main>
-    <Footer />
-  </>
-    )
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 export default Layout
