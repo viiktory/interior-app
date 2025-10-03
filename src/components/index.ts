@@ -26,6 +26,8 @@ export { default as FeaturesIntro } from './About/FeaturesIntro'
 
 export { default as Reviews } from './About/Reviews'
 
+export { default as Modal } from './Modal/Modal'
+
 export { default as CompanyLogo } from './About/CompanyLogo'
 
 export { default as InfoProjects } from './Services/InfoProjects'

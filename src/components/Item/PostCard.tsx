@@ -1,6 +1,3 @@
-import { PATHS } from '@/paths.ts'
-import { ItemLink } from '@/components'
-
 type PostCardProps = {
   image?: string
   title: string
@@ -40,7 +37,9 @@ const PostCard = ({
 
       {button && (
         <div className="mt-auto flex justify-end">
-          <ItemLink to={PATHS.SOON} label={button} onClick={onClick} className="button-secondary" />
+          <button onClick={onClick} className="button-secondary">
+            {button}
+          </button>
         </div>
       )}
     </div>

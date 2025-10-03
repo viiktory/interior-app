@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { getBlogs, BlogsCardsProps } from '../../api/getBlogs'
-import { Field, PostCard, FadeIn } from '@/components'
+import { Field, PostCard, FadeIn, Modal } from '@/components'
+import Gallery from '@/components/Gallery/Gallery.tsx'
 
 const BlogsCards = () => {
   const [blog, setBlogs] = useState<BlogsCardsProps[]>([])
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedPost, setSelectedPost] = useState<BlogsCardsProps | null>(null)
   const postsPerPage = 3
 
   useEffect(() => {
@@ -39,8 +41,15 @@ const BlogsCards = () => {
             className="text-center"
           />
           <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-3">
-            {currentPosts.map(({ id, image, title, text }) => (
-              <PostCard key={id} image={image} title={title} dataPost={text} button="Read more" />
+            {currentPosts.map((post) => (
+              <PostCard
+                key={post.id}
+                image={post.image}
+                title={post.title}
+                dataPost={post.text}
+                button="Read more"
+                onClick={() => setSelectedPost(post)}
+              />
             ))}
           </div>
           <div className="mt-8 flex items-center justify-center gap-4">
@@ -66,6 +75,28 @@ const BlogsCards = () => {
           </div>
         </div>
       </FadeIn>
+
+      {selectedPost && (
+        <Modal onClose={() => setSelectedPost(null)}>
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex flex-col justify-between flex-1">
+              <div>
+                <h2 className="hero-title-h2 mb-2">{selectedPost.title}</h2>
+                <p className="text-sm text-description mb-4">{selectedPost.text}</p>
+                <p className="hero-subtitle-p mb-4">{selectedPost.description}</p>
+              </div>
+
+              <button
+                className="mt-6 flex items-center gap-2 rounded-xl bg-secondary px-4 py-2 text-white hover:bg-secondary/80 self-start"
+              >
+                💾 Save
+              </button>
+            </div>
+
+            <Gallery images={[selectedPost.image, selectedPost.image2, selectedPost.image3]} />
+          </div>
+        </Modal>
+      )}
     </section>
   )
 }

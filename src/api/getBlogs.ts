@@ -4,8 +4,11 @@ import { db } from '../firebase/config.ts'
 export type BlogsCardsProps = {
   id: string
   image: string
+  image2?: string
+  image3?: string
   title: string
   text: string
+  description: string
 }
 
 export const getBlogs = async (): Promise<BlogsCardsProps[]> => {
