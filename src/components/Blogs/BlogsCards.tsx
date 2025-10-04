@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { FiChevronLeft, FiChevronRight, FiBookmark} from 'react-icons/fi'
 import { getBlogs, BlogsCardsProps } from '../../api/getBlogs'
 import { Field, PostCard, FadeIn, Modal } from '@/components'
 import Gallery from '@/components/Gallery/Gallery.tsx'
@@ -79,17 +79,16 @@ const BlogsCards = () => {
       {selectedPost && (
         <Modal onClose={() => setSelectedPost(null)}>
           <div className="flex flex-col lg:flex-row gap-6">
+
             <div className="flex flex-col justify-between flex-1">
-              <div>
-                <h2 className="hero-title-h2 mb-2">{selectedPost.title}</h2>
-                <p className="text-sm text-description mb-4">{selectedPost.text}</p>
-                <p className="hero-subtitle-p mb-4">{selectedPost.description}</p>
-              </div>
+                <h2 className="hero-title-h2 mb-4">{selectedPost.title}</h2>
+                <p className="text-sm text-description mb-8">{selectedPost.text}</p>
+                <p className="hero-subtitle-p mb-12">{selectedPost.description}</p>
 
               <button
-                className="mt-6 flex items-center gap-2 rounded-xl bg-secondary px-4 py-2 text-white hover:bg-secondary/80 self-start"
+                className=" flex items-center rounded-xl bg-secondary px-4 py-2 text-white hover:bg-secondary/80 self-start"
               >
-                💾 Save
+                <FiBookmark/>
               </button>
             </div>
 

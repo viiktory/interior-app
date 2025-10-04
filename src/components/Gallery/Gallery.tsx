@@ -5,27 +5,27 @@ const Gallery = ({ images }: { images: (string | undefined)[] }) => {
   const [mainImage, setMainImage] = useState(validImages[0]);
 
   return (
-    <div className="flex flex-col items-center gap-4 flex-1">
+    <div className="flex flex-1 flex-col items-center gap-4">
       <img
         src={mainImage}
         alt="main"
-        className="w-full max-w-sm rounded-lg object-cover"
+        className="aspect-[4/3] w-full max-w-[600px] rounded-lg object-cover"
       />
 
-      <div className="flex gap-3">
+      <div className="grid w-full max-w-[600px] grid-cols-3 gap-3">
         {validImages.map((img, idx) => (
           <img
             key={idx}
             src={img}
             alt={`thumb-${idx}`}
-            className={`w-20 h-20 rounded-lg cursor-pointer object-cover transition 
-              ${mainImage === img ? "ring-2 ring-secondary" : ""}`}
+            className={`w-full aspect-[4/3] rounded-lg cursor-pointer object-cover transition 
+          ${mainImage === img ? "ring-4 ring-secondary" : ""}`}
             onClick={() => setMainImage(img)}
           />
         ))}
       </div>
     </div>
-  );
+  )
 };
 
 export default Gallery
