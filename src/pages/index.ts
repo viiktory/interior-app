@@ -9,3 +9,5 @@ export { default as Blogs } from './Blogs/Blogs'
 export { default as ToBeDev } from './ToBeDev/ToBeDev'
 
 export { default as ErrorPage } from './ErrorPage/ErrorPage'
+
+export { default as Favorites } from './Favorites/Favorites'

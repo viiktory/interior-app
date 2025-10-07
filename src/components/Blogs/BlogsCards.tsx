@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { FiChevronLeft, FiChevronRight, FiBookmark} from 'react-icons/fi'
-import { getBlogs, BlogsCardsProps } from '../../api/getBlogs'
-import { Field, PostCard, FadeIn, Modal } from '@/components'
-import Gallery from '@/components/Gallery/Gallery.tsx'
+import { FiChevronLeft, FiChevronRight, FiBookmark } from 'react-icons/fi'
+import { getBlogs, BlogsCardsProps } from '@/api/getBlogs'
+import useSaveStore from '@/store/useSaveStore'
+import { Field, PostCard, FadeIn, Modal, Gallery } from '@/components'
 
 const BlogsCards = () => {
   const [blog, setBlogs] = useState<BlogsCardsProps[]>([])
@@ -23,13 +23,15 @@ const BlogsCards = () => {
     fetchData()
   }, [])
 
-  const totalPages = Math.ceil(blog.length / postsPerPage) //2
+  const totalPages = Math.ceil(blog.length / postsPerPage)
   const startIndex = (currentPage - 1) * postsPerPage
   const currentPosts = blog.slice(startIndex, startIndex + postsPerPage)
 
   const handlePageChange = (direction: 'next' | 'prev') => {
     setCurrentPage((prev) => (direction === 'next' ? prev + 1 : prev - 1))
   }
+
+  const { savePosts, toggleSave } = useSaveStore()
 
   return (
     <section className="bg-background pb-8 pt-4">
@@ -48,6 +50,8 @@ const BlogsCards = () => {
                 title={post.title}
                 dataPost={post.text}
                 button="Read more"
+                isSaved={savePosts[post.id]}
+                onToggleSave={() => toggleSave(post.id)}
                 onClick={() => setSelectedPost(post)}
               />
             ))}
@@ -78,17 +82,22 @@ const BlogsCards = () => {
 
       {selectedPost && (
         <Modal onClose={() => setSelectedPost(null)}>
-          <div className="flex flex-col lg:flex-row gap-6">
-
-            <div className="flex flex-col justify-between flex-1">
-                <h2 className="hero-title-h2 mb-4">{selectedPost.title}</h2>
-                <p className="text-sm text-description mb-8">{selectedPost.text}</p>
-                <p className="hero-subtitle-p mb-12">{selectedPost.description}</p>
+          <div className="flex flex-col gap-6 lg:flex-row">
+            <div className="flex flex-1 flex-col justify-between">
+              <h2 className="hero-title-h2 mb-4">{selectedPost.title}</h2>
+              <p className="mb-8 text-sm text-description">{selectedPost.text}</p>
+              <p className="hero-subtitle-p mb-12">{selectedPost.description}</p>
 
               <button
-                className=" flex items-center rounded-xl bg-secondary px-4 py-2 text-white hover:bg-secondary/80 self-start"
+                onClick={() => toggleSave(selectedPost.id)}
+                className={`flex items-center self-start rounded-xl bg-secondary px-4 py-2 transition-all ${
+                  savePosts[selectedPost.id]
+                    ? 'bg-description text-white hover:bg-description/80'
+                    : 'bg-secondary text-white hover:bg-secondary/80'
+                }`}
               >
-                <FiBookmark/>
+                <FiBookmark className="mr-2" />
+                {savePosts[selectedPost.id] ? 'Saved' : 'Save'}
               </button>
             </div>
 

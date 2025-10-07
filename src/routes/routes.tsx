@@ -1,6 +1,6 @@
 import { PATHS } from '../paths'
 import { Layout } from '../components'
-import { Home, ToBeDev, ErrorPage } from '../pages'
+import { Home, ToBeDev, ErrorPage, Favorites } from '../pages'
 
 export const routes = [
   {
@@ -8,6 +8,7 @@ export const routes = [
     element: <Layout />,
     children: [
       { path: PATHS.HOME, element: <Home /> },
+      { path: PATHS.SAVE, element: <Favorites /> },
       { path: PATHS.SOON, element: <ToBeDev /> },
       { path: '*', element: <ErrorPage /> },
     ],

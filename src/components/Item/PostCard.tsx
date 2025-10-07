@@ -1,3 +1,5 @@
+import { FiBookmark } from 'react-icons/fi'
+
 type PostCardProps = {
   image?: string
   title: string
@@ -5,6 +7,8 @@ type PostCardProps = {
   dataPost?: string
   button?: string
   onClick?: () => void
+  isSaved?: boolean
+  onToggleSave?: () => void
   className?: string
 }
 
@@ -13,12 +17,14 @@ const PostCard = ({
   title,
   description,
   dataPost,
-  button,
   onClick,
   className,
+  isSaved,
+  onToggleSave,
 }: PostCardProps) => {
   return (
-    <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 ${className ?? ''}`}>
+    <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 ${className ?? ''}`}
+         onClick={onClick}>
       {image && (
         <img
           src={image}
@@ -35,12 +41,19 @@ const PostCard = ({
         )}
       </div>
 
-      {button && (
-        <div className="mt-auto flex justify-end">
-          <button onClick={onClick} className="button-secondary">
-            {button}
-          </button>
-        </div>
+      {onToggleSave && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            onToggleSave()
+          }}
+          className={`flex items-center mt-2 rounded-xl self-start px-4 py-2 text-sm transition-all ${
+            isSaved ? 'bg-description text-white hover:bg-description/80' : 'bg-secondary text-white hover:bg-secondary/80'
+          }`}
+        >
+          <FiBookmark className="mr-2" />
+          {isSaved ? 'Saved' : 'Save'}
+        </button>
       )}
     </div>
   )

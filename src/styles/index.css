@@ -112,6 +112,10 @@
   @apply relative px-2 py-2 font-serif text-[16px] text-description after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:text-secondary hover:after:origin-left hover:after:scale-x-100 lg:text-[18px];
 }
 
+.button-description {
+    @apply min-w-[150px] items-center justify-center rounded-[20px]  px-2 py-3 text-[16px] text-description border-secondary border-solid border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg md:py-4 lg:h-[50px] lg:text-[18px] hover:text-secondary;
+}
+
 .small-description {
   @apply text-link text-description lg:text-base;
 }

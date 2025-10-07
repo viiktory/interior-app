@@ -36,4 +36,6 @@ export { default as FeaturesServices } from './Services/FeaturesServices'
 
 export { default as BlogsCards } from './Blogs/BlogsCards'
 
-export { default as SubscribeNews } from './Blogs/Subscribe.tsx'
+export { default as SubscribeNews } from './Blogs/Subscribe'
+
+export { default as Gallery } from './Gallery/Gallery'

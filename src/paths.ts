@@ -1,6 +1,7 @@
 export const PATHS = {
   HOME: '/',
   ABOUT: '#about',
+  SAVE: '/save',
   SERVICE: {
     service: '#services',
     details: '/services/:id',
