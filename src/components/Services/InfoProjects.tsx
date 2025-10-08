@@ -35,16 +35,11 @@ const InfoProjects = () => {
           />
 
           <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2 lg:gap-6">
-              {projects.slice(0, visible).map(({ id, image, title, text }) => (
-                <ItemLink  key={id} to={PATHS.SOON}>
-                <PostCard
-                  image={image}
-                  title={title}
-                  description={text}
-                  button="Read more"
-                />
-                </ItemLink>
-              ))}
+            {projects.slice(0, visible).map(({ id, image, title, text }) => (
+              <ItemLink key={id} to={PATHS.SOON}>
+                <PostCard image={image} title={title} description={text} button="Read more" />
+              </ItemLink>
+            ))}
           </div>
           {visible < projects.length && (
             <div className="pb-12 text-center">

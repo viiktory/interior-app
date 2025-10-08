@@ -1,16 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const Gallery = ({ images }: { images: (string | undefined)[] }) => {
-  const validImages = images.filter(Boolean) as string[];
-  const [mainImage, setMainImage] = useState(validImages[0]);
+  const validImages = images.filter(Boolean) as string[]
+  const [mainImage, setMainImage] = useState(validImages[0])
 
   return (
     <div className="flex flex-1 flex-col items-center gap-4">
-      <img
-        src={mainImage}
-        alt="main"
-        className="aspect-[4/3] w-full rounded-lg object-cover"
-      />
+      <img src={mainImage} alt="main" className="aspect-[4/3] w-full rounded-lg object-cover" />
 
       <div className="grid w-full grid-cols-3 gap-3">
         {validImages.map((img, idx) => (
@@ -18,14 +14,13 @@ const Gallery = ({ images }: { images: (string | undefined)[] }) => {
             key={idx}
             src={img}
             alt={`thumb-${idx}`}
-            className={`w-full aspect-[4/3] rounded-lg cursor-pointer object-cover transition 
-          ${mainImage === img ? "ring-4 ring-secondary" : ""}`}
+            className={`aspect-[4/3] w-full cursor-pointer rounded-lg object-cover transition ${mainImage === img ? 'ring-4 ring-secondary' : ''}`}
             onClick={() => setMainImage(img)}
           />
         ))}
       </div>
     </div>
   )
-};
+}
 
 export default Gallery

@@ -42,13 +42,13 @@ const Favorites = () => {
   }
 
   return (
-    <section className="container mt-[150px] flex-col items-center  gap-12">
+    <section className="container mt-[150px] flex-col items-center gap-12">
       <div className="flex items-center gap-2">
         <HeartsIconLeft />
         <h2 className="hero-title-h2 text-center">Articles you&apos;ve saved</h2>
         <HeartsIconRight />
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-1 grid-rows-2 gap-5 mb-[100px]">
+      <div className="mb-[100px] grid grid-cols-1 grid-rows-2 gap-5 md:grid-cols-3">
         {favoriteBlogs.map((post) => (
           <PostCard
             key={post.id}

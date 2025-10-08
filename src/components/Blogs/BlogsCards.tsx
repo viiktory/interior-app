@@ -35,7 +35,7 @@ const BlogsCards = () => {
 
   return (
     <section className="bg-background pb-8 pt-4">
-      <FadeIn viewport={{ once: true, amount: 0.4 }}>
+      <FadeIn viewport={{ once: true, amount: 0.3 }}>
         <div className="container flex-col">
           <Field
             title="Recent Blogs"

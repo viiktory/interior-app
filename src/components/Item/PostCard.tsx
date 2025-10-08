@@ -23,8 +23,10 @@ const PostCard = ({
   onToggleSave,
 }: PostCardProps) => {
   return (
-    <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 transition-transform duration-300 hover:scale-105 ${className ?? ''}`}
-         onClick={onClick}>
+    <div
+      className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 transition-transform duration-300 hover:scale-105 lg:p-6 ${className ?? ''}`}
+      onClick={onClick}
+    >
       {image && (
         <img
           src={image}
@@ -47,8 +49,10 @@ const PostCard = ({
             e.stopPropagation()
             onToggleSave()
           }}
-          className={`flex items-center mt-2 rounded-xl self-start px-4 py-2 text-sm transition-all ${
-            isSaved ? 'bg-description text-white hover:bg-description/80' : 'bg-secondary text-white hover:bg-secondary/80'
+          className={`mt-2 flex items-center self-start rounded-xl px-4 py-2 text-sm transition-all ${
+            isSaved
+              ? 'bg-description text-white hover:bg-description/80'
+              : 'bg-secondary text-white hover:bg-secondary/80'
           }`}
         >
           <FiBookmark className="mr-2" />
