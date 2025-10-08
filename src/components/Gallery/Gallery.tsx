@@ -9,10 +9,10 @@ const Gallery = ({ images }: { images: (string | undefined)[] }) => {
       <img
         src={mainImage}
         alt="main"
-        className="aspect-[4/3] w-full max-w-[600px] rounded-lg object-cover"
+        className="aspect-[4/3] w-full rounded-lg object-cover"
       />
 
-      <div className="grid w-full max-w-[600px] grid-cols-3 gap-3">
+      <div className="grid w-full grid-cols-3 gap-3">
         {validImages.map((img, idx) => (
           <img
             key={idx}

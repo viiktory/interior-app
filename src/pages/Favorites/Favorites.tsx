@@ -48,7 +48,7 @@ const Favorites = () => {
         <h2 className="hero-title-h2 text-center">Articles you&apos;ve saved</h2>
         <HeartsIconRight />
       </div>
-      <div className="grid grid-cols-3 grid-rows-2 gap-5 mb-[100px]">
+      <div className="grid md:grid-cols-3 grid-cols-1 grid-rows-2 gap-5 mb-[100px]">
         {favoriteBlogs.map((post) => (
           <PostCard
             key={post.id}

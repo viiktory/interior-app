@@ -23,13 +23,13 @@ const PostCard = ({
   onToggleSave,
 }: PostCardProps) => {
   return (
-    <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 ${className ?? ''}`}
+    <div className={`flex flex-col gap-4 rounded-2xl bg-cardBg p-4 lg:p-6 transition-transform duration-300 hover:scale-105 ${className ?? ''}`}
          onClick={onClick}>
       {image && (
         <img
           src={image}
           alt={title}
-          className="h-60 w-full rounded-t-lg object-cover transition-transform duration-300 hover:scale-105"
+          className="h-60 w-full rounded-t-lg object-cover transition-transform duration-300"
         />
       )}
 

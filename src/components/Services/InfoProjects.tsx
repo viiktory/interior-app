@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getProjects, InfoProjectProps } from '@/api/getProjects'
-import { Field, PostCard, Button, FadeIn } from '@/components'
+import { Field, PostCard, Button, FadeIn, ItemLink } from '@/components'
+import { PATHS } from '@/paths.ts'
 
 const InfoProjects = () => {
   const [projects, setProjects] = useState<InfoProjectProps[]>([])
@@ -34,15 +35,16 @@ const InfoProjects = () => {
           />
 
           <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2 lg:gap-6">
-            {projects.slice(0, visible).map(({ id, image, title, text }) => (
-              <PostCard
-                key={id}
-                image={image}
-                title={title}
-                description={text}
-                button="Read more"
-              />
-            ))}
+              {projects.slice(0, visible).map(({ id, image, title, text }) => (
+                <ItemLink  key={id} to={PATHS.SOON}>
+                <PostCard
+                  image={image}
+                  title={title}
+                  description={text}
+                  button="Read more"
+                />
+                </ItemLink>
+              ))}
           </div>
           {visible < projects.length && (
             <div className="pb-12 text-center">
