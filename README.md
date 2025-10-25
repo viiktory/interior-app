@@ -29,6 +29,8 @@ Demo: [interior-app-sigma.vercel.app](https://interior-app-sigma.vercel.app/)**
 
 ## ✨ Features
 
+---
+
 - Browse and explore interior design ideas
 - Booking form with validation
 - Fully responsive design

@@ -20,7 +20,10 @@ const FeaturesIntro = () => {
               to="tel:+380123456789"
               className="mt-4 flex items-center gap-4 font-sans text-base text-description lg:mt-12"
             >
-              <PhoneIcon alt="Phone" className="w-30 h-30" />
+              <PhoneIcon
+                alt="Phone"
+                className="h-12 w-12 rounded-full border border-solid border-secondary px-3 hover:shadow-xl"
+              />
               <div className="flex flex-col gap-2">
                 <span className="small-description">Call Us Anytime</span>
                 <span className="small-description">+380123456789</span>

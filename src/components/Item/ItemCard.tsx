@@ -21,8 +21,8 @@ const ItemCard = ({
   className,
 }: ItemCardProps) => {
   return (
-    <div className={`card ${className ?? ''}`}>
-      <div className="flex flex-col items-center gap-4 text-center">
+    <div className={`card group ${className ?? ''}`}>
+      <div className="flex flex-col items-center gap-4 text-center transition-transform duration-300 hover:scale-110">
         {image && (
           <img
             src={image}
